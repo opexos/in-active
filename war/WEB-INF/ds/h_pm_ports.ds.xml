@@ -1,0 +1,32 @@
+<DataSource		ID="h_pm_ports"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="PK"					type="integer"	primaryKey="true" />
+        <field name="WHO_MODIFY"			type="text"		customSelectExpression="user_get_name(who_modify)"	/>
+        <field name="WHEN_MODIFY"			type="datetime"	/>
+        <field name="ACTION"				type="text"	/>
+        <field name="ID"					type="integer"	/>
+        <field name="DEV_HOST"				type="text"	/>
+        <field name="DEV_NAME"				type="text"	/>
+        <field name="PORT"					type="text"	/>
+        <field name="OLD_TELCO"				type="text"	/>
+        <field name="OLD_PATCH"				type="text"	/>
+        <field name="OLD_LOCATION"			type="text"	/>
+        <field name="OLD_COMMENT"			type="text"	/>
+        <field name="NEW_TELCO"				type="text"	/>
+        <field name="NEW_PATCH"				type="text"	/>
+        <field name="NEW_LOCATION"			type="text"	/>
+        <field name="NEW_COMMENT"			type="text"	/>
+	</fields>
+	    
+	<script>
+	    checkJournalAccess();		
+		return dsRequest.execute();
+	</script>  	
+    
+</DataSource>

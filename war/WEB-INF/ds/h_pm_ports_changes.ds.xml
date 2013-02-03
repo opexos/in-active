@@ -1,0 +1,24 @@
+<DataSource		ID="h_pm_ports_changes"	
+				serverType="sql"
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="PK"					type="integer"	primaryKey="true" />
+        <field name="WHO_CHANGE"			type="text"		customSelectExpression="user_get_name(who_change)"	/>
+        <field name="WHEN_CHANGE"			type="datetime"	/>
+        <field name="DEV_HOST"				type="text"	/>
+        <field name="DEV_NAME"				type="text"	/>
+        <field name="PORT"					type="text"	/>
+        <field name="ACTION"				type="text"	/>
+        <field name="VAL"					type="text"	/>
+	</fields>
+	    
+	<script>
+	    checkJournalAccess();		
+		return dsRequest.execute();
+	</script>  	
+    
+</DataSource>

@@ -1,0 +1,290 @@
+<DataSource		ID="dm_devices"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"						type="sequence"	primaryKey="true" />
+        <field name="OBJECT_ID"					type="integer"	required="true" foreignKey="objects.ID"/>        
+        <field name="OBJECT_NAME"				includeFrom="objects.NAME"		/>
+        <field name="MAP_NAME"					includeFrom="objects.MAP_NAME"	/>
+        
+        <field name="DEVICE_ID"					type="integer"	required="true" foreignKey="devices.ID"/>
+        <field name="HOST_SORT"					type="integer"	customSelectExpression="ip2int(devices.host)" hidden="true"/>
+		<field name="HOST"						includeFrom="devices.HOST" sortByField="HOST_SORT" />
+        <field name="DEVICE_NAME"				includeFrom="devices.NAME"/>
+        <field name="LOCATION"					includeFrom="devices.LOCATION"/>
+        <field name="COMMENT"					includeFrom="devices.COMMENT"/>
+        <field name="DEVICE_TYPE_NAME"			includeFrom="devices.DEVICE_TYPE_NAME"/>
+        <field name="DEVICE_TYPE_ID"			includeFrom="devices.DEVICE_TYPE_ID"/>
+        <field name="LOGIN"						includeFrom="devices.LOGIN"			customSQL="true"/>
+        <field name="PWD"						includeFrom="devices.PWD"			customSQL="true"/>
+        <field name="ENABLE_PWD"				includeFrom="devices.ENABLE_PWD"	customSQL="true"/>
+        
+        <field name="DATE1"			type="datetime" 	/>
+        <field name="DATE2"			type="datetime" 	/>
+        <field name="DATE3"			type="datetime" 	/>
+        <field name="DATE4"			type="datetime" 	/>
+        <field name="DATE5"			type="datetime" 	/>
+        <field name="DATE6"			type="datetime" 	/>
+        <field name="DATE7"			type="datetime" 	/>
+        <field name="DATE8"			type="datetime" 	/>
+        <field name="DATE9"			type="datetime" 	/>
+        <field name="DATE10"		type="datetime"		/>
+        <field name="DATE11"		type="datetime" 	/>
+        <field name="DATE12"		type="datetime" 	/>
+        <field name="DATE13"		type="datetime" 	/>
+        <field name="DATE14"		type="datetime" 	/>
+        <field name="DATE15"		type="datetime" 	/>
+        <field name="DATE16"		type="datetime" 	/>
+        <field name="DATE17"		type="datetime" 	/>
+        <field name="DATE18"		type="datetime" 	/>
+        <field name="DATE19"		type="datetime" 	/>
+        <field name="DATE20"		type="datetime"		/>
+        
+        <field name="BOOL1"			type="boolean" 	 />
+        <field name="BOOL2"			type="boolean" 	 />
+        <field name="BOOL3"			type="boolean" 	 />
+        <field name="BOOL4"			type="boolean" 	 />
+        <field name="BOOL5"			type="boolean" 	 />
+        <field name="BOOL6"			type="boolean" 	 />
+        <field name="BOOL7"			type="boolean" 	 />
+        <field name="BOOL8"			type="boolean" 	 />
+        <field name="BOOL9"			type="boolean" 	 />
+        <field name="BOOL10"		type="boolean" 	 />
+        <field name="BOOL11"		type="boolean" 	 />
+        <field name="BOOL12"		type="boolean" 	 />
+        <field name="BOOL13"		type="boolean" 	 />
+        <field name="BOOL14"		type="boolean" 	 />
+        <field name="BOOL15"		type="boolean" 	 />
+        <field name="BOOL16"		type="boolean" 	 />
+        <field name="BOOL17"		type="boolean" 	 />
+        <field name="BOOL18"		type="boolean" 	 />
+        <field name="BOOL19"		type="boolean" 	 />
+        <field name="BOOL20"		type="boolean" 	 />
+        
+        <field name="IP1_SORT"		type="integer"	customSelectExpression="ip2int(ip1)" hidden="true"/>
+        <field name="IP2_SORT"		type="integer"	customSelectExpression="ip2int(ip2)" hidden="true"/>
+        <field name="IP3_SORT"		type="integer"	customSelectExpression="ip2int(ip3)" hidden="true"/>
+        <field name="IP4_SORT"		type="integer"	customSelectExpression="ip2int(ip4)" hidden="true"/>
+        <field name="IP5_SORT"		type="integer"	customSelectExpression="ip2int(ip5)" hidden="true"/>
+        <field name="IP6_SORT"		type="integer"	customSelectExpression="ip2int(ip6)" hidden="true"/>
+        <field name="IP7_SORT"		type="integer"	customSelectExpression="ip2int(ip7)" hidden="true"/>
+        <field name="IP8_SORT"		type="integer"	customSelectExpression="ip2int(ip8)" hidden="true"/>
+        <field name="IP9_SORT"		type="integer"	customSelectExpression="ip2int(ip9)" hidden="true"/>
+        <field name="IP10_SORT"		type="integer"	customSelectExpression="ip2int(ip10)" hidden="true"/>
+        <field name="IP11_SORT"		type="integer"	customSelectExpression="ip2int(ip11)" hidden="true"/>
+        <field name="IP12_SORT"		type="integer"	customSelectExpression="ip2int(ip12)" hidden="true"/>
+        <field name="IP13_SORT"		type="integer"	customSelectExpression="ip2int(ip13)" hidden="true"/>
+        <field name="IP14_SORT"		type="integer"	customSelectExpression="ip2int(ip14)" hidden="true"/>
+        <field name="IP15_SORT"		type="integer"	customSelectExpression="ip2int(ip15)" hidden="true"/>
+        <field name="IP16_SORT"		type="integer"	customSelectExpression="ip2int(ip16)" hidden="true"/>
+        <field name="IP17_SORT"		type="integer"	customSelectExpression="ip2int(ip17)" hidden="true"/>
+        <field name="IP18_SORT"		type="integer"	customSelectExpression="ip2int(ip18)" hidden="true"/>
+        <field name="IP19_SORT"		type="integer"	customSelectExpression="ip2int(ip19)" hidden="true"/>
+        <field name="IP20_SORT"		type="integer"	customSelectExpression="ip2int(ip20)" hidden="true"/>
+        
+        <field name="IP1"			type="text" 	length="15"		sortByField="IP1_SORT"/>
+        <field name="IP2"			type="text" 	length="15" 	sortByField="IP2_SORT"/>
+        <field name="IP3"			type="text" 	length="15" 	sortByField="IP3_SORT"/>
+        <field name="IP4"			type="text" 	length="15" 	sortByField="IP4_SORT"/>
+        <field name="IP5"			type="text" 	length="15" 	sortByField="IP5_SORT"/>
+        <field name="IP6"			type="text" 	length="15" 	sortByField="IP6_SORT"/>
+        <field name="IP7"			type="text" 	length="15" 	sortByField="IP7_SORT"/>
+        <field name="IP8"			type="text" 	length="15" 	sortByField="IP8_SORT"/>
+        <field name="IP9"			type="text" 	length="15" 	sortByField="IP9_SORT"/>
+        <field name="IP10"			type="text" 	length="15" 	sortByField="IP10_SORT"/>
+        <field name="IP11"			type="text" 	length="15" 	sortByField="IP11_SORT"/>
+        <field name="IP12"			type="text" 	length="15"		sortByField="IP12_SORT"/>
+        <field name="IP13"			type="text" 	length="15" 	sortByField="IP13_SORT"/>
+        <field name="IP14"			type="text" 	length="15" 	sortByField="IP14_SORT"/>
+        <field name="IP15"			type="text" 	length="15" 	sortByField="IP15_SORT"/>
+        <field name="IP16"			type="text" 	length="15" 	sortByField="IP16_SORT"/>
+        <field name="IP17"			type="text" 	length="15" 	sortByField="IP17_SORT"/>
+        <field name="IP18"			type="text" 	length="15" 	sortByField="IP18_SORT"/>
+        <field name="IP19"			type="text" 	length="15" 	sortByField="IP19_SORT"/>
+        <field name="IP20"			type="text" 	length="15" 	sortByField="IP20_SORT"/>
+        
+        <field name="TEXT1"			type="text" 	/>
+        <field name="TEXT2"			type="text" 	/>
+        <field name="TEXT3"			type="text" 	/>
+        <field name="TEXT4"			type="text" 	/>
+        <field name="TEXT5"			type="text" 	/>
+        <field name="TEXT6"			type="text" 	/>
+        <field name="TEXT7"			type="text" 	/>
+        <field name="TEXT8"			type="text" 	/>
+        <field name="TEXT9"			type="text" 	/>
+        <field name="TEXT10"		type="text" 	/>        
+        <field name="TEXT11"		type="text" 	/>
+        <field name="TEXT12"		type="text" 	/>
+        <field name="TEXT13"		type="text" 	/>
+        <field name="TEXT14"		type="text" 	/>
+        <field name="TEXT15"		type="text" 	/>
+        <field name="TEXT16"		type="text" 	/>
+        <field name="TEXT17"		type="text" 	/>
+        <field name="TEXT18"		type="text" 	/>
+        <field name="TEXT19"		type="text" 	/>
+        <field name="TEXT20"		type="text" 	/>
+        
+        <field name="DICT_VAL_ID1"	type="integer" 	 />
+        <field name="DICT_VAL_ID2"	type="integer" 	 />
+        <field name="DICT_VAL_ID3"	type="integer" 	 />
+        <field name="DICT_VAL_ID4"	type="integer" 	 />
+        <field name="DICT_VAL_ID5"	type="integer" 	 />
+        <field name="DICT_VAL_ID6"	type="integer" 	 />
+        <field name="DICT_VAL_ID7"	type="integer" 	 />
+        <field name="DICT_VAL_ID8"	type="integer" 	 />
+        <field name="DICT_VAL_ID9"	type="integer" 	 />
+        <field name="DICT_VAL_ID10"	type="integer" 	 />
+        <field name="DICT_VAL_ID11"	type="integer" 	 />
+        <field name="DICT_VAL_ID12"	type="integer" 	 />
+        <field name="DICT_VAL_ID13"	type="integer" 	 />
+        <field name="DICT_VAL_ID14"	type="integer" 	 />
+        <field name="DICT_VAL_ID15"	type="integer" 	 />
+        <field name="DICT_VAL_ID16"	type="integer" 	 />
+        <field name="DICT_VAL_ID17"	type="integer" 	 />
+        <field name="DICT_VAL_ID18"	type="integer" 	 />
+        <field name="DICT_VAL_ID19"	type="integer" 	 />
+        <field name="DICT_VAL_ID20"	type="integer" 	 />
+        
+        <field name="DICT1"			type="text"		customSelectExpression="dict_get_value(dict_val_id1)" 	 />
+        <field name="DICT2"			type="text"		customSelectExpression="dict_get_value(dict_val_id2)" 	 />
+        <field name="DICT3"			type="text"		customSelectExpression="dict_get_value(dict_val_id3)" 	 />
+        <field name="DICT4"			type="text"		customSelectExpression="dict_get_value(dict_val_id4)" 	 />
+        <field name="DICT5"			type="text"		customSelectExpression="dict_get_value(dict_val_id5)" 	 />
+        <field name="DICT6"			type="text"		customSelectExpression="dict_get_value(dict_val_id6)" 	 />
+        <field name="DICT7"			type="text"		customSelectExpression="dict_get_value(dict_val_id7)" 	 />
+        <field name="DICT8"			type="text"		customSelectExpression="dict_get_value(dict_val_id8)" 	 />
+        <field name="DICT9"			type="text"		customSelectExpression="dict_get_value(dict_val_id9)" 	 />
+        <field name="DICT10"		type="text"		customSelectExpression="dict_get_value(dict_val_id10)" 	 />
+        <field name="DICT11"		type="text"		customSelectExpression="dict_get_value(dict_val_id11)" 	 />
+        <field name="DICT12"		type="text"		customSelectExpression="dict_get_value(dict_val_id12)" 	 />
+        <field name="DICT13"		type="text"		customSelectExpression="dict_get_value(dict_val_id13)" 	 />
+        <field name="DICT14"		type="text"		customSelectExpression="dict_get_value(dict_val_id14)" 	 />
+        <field name="DICT15"		type="text"		customSelectExpression="dict_get_value(dict_val_id15)" 	 />
+        <field name="DICT16"		type="text"		customSelectExpression="dict_get_value(dict_val_id16)" 	 />
+        <field name="DICT17"		type="text"		customSelectExpression="dict_get_value(dict_val_id17)" 	 />
+        <field name="DICT18"		type="text"		customSelectExpression="dict_get_value(dict_val_id18)" 	 />
+        <field name="DICT19"		type="text"		customSelectExpression="dict_get_value(dict_val_id19)" 	 />
+        <field name="DICT20"		type="text"		customSelectExpression="dict_get_value(dict_val_id20)" 	 />
+        
+    </fields>
+    
+	<script>
+	    if (DataSource.isModificationOperation(dsRequest.getOperationType())) {
+	    	def objId = values.OBJECT_ID
+	    	
+	    	if (objId == null)
+	    		objId = new DSRequest("dm_devices", "fetch", rpcManager).setCriteria("ID", values.ID).execute().getDataMap().OBJECT_ID
+	    		
+			if (!"FULL".equals(new DSRequest("objects", "fetch", rpcManager).setCriteria("ID", objId).execute().getDataMap().ACCESS))
+				throw new ExAccessDenied()
+		}
+		return dsRequest.execute()
+	</script>   
+    
+    <operationBindings>
+        
+	    <operationBinding operationType="fetch" operationId="WITH_CREDENTIALS" customFields="LOGIN,PWD,ENABLE_PWD" requiresRole="admin"/>
+        
+		<operationBinding operationType="fetch">
+	    	<whereClause>$defaultWhereClause and object_access(object_id) is not null</whereClause>    
+	    </operationBinding>        
+        
+		<operationBinding operationType="fetch" operationId="FIND">
+	        <whereClause>$defaultWhereClause and object_access(object_id) is not null 
+	            and (
+	            lower(devices.name) like $advancedCriteria.X or
+	            lower(devices.comment) like $advancedCriteria.X or
+	            lower(devices.location) like $advancedCriteria.X or	            
+	            
+	            lower(text1) like $advancedCriteria.X or 
+	            lower(text2) like $advancedCriteria.X or
+	            lower(text3) like $advancedCriteria.X or
+	            lower(text4) like $advancedCriteria.X or
+	            lower(text5) like $advancedCriteria.X or
+	            lower(text6) like $advancedCriteria.X or
+	            lower(text7) like $advancedCriteria.X or
+	            lower(text8) like $advancedCriteria.X or
+	            lower(text9) like $advancedCriteria.X or
+	            lower(text10) like $advancedCriteria.X or
+	            lower(text11) like $advancedCriteria.X or
+	            lower(text12) like $advancedCriteria.X or
+	            lower(text13) like $advancedCriteria.X or
+	            lower(text14) like $advancedCriteria.X or
+	            lower(text15) like $advancedCriteria.X or
+	            lower(text16) like $advancedCriteria.X or
+	            lower(text17) like $advancedCriteria.X or
+	            lower(text18) like $advancedCriteria.X or
+	            lower(text19) like $advancedCriteria.X or
+	            lower(text20) like $advancedCriteria.X or
+	            
+	            ip1 like $advancedCriteria.X or
+	            ip2 like $advancedCriteria.X or
+	            ip3 like $advancedCriteria.X or
+	            ip4 like $advancedCriteria.X or
+	            ip5 like $advancedCriteria.X or
+	            ip6 like $advancedCriteria.X or
+	            ip7 like $advancedCriteria.X or
+	            ip8 like $advancedCriteria.X or
+	            ip9 like $advancedCriteria.X or
+	            ip10 like $advancedCriteria.X or
+	            ip11 like $advancedCriteria.X or
+	            ip12 like $advancedCriteria.X or
+	            ip13 like $advancedCriteria.X or
+	            ip14 like $advancedCriteria.X or
+	            ip15 like $advancedCriteria.X or
+	            ip16 like $advancedCriteria.X or
+	            ip17 like $advancedCriteria.X or
+	            ip18 like $advancedCriteria.X or
+	            ip19 like $advancedCriteria.X or
+	            ip20 like $advancedCriteria.X or
+	            
+	            to_char(date1,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date2,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date3,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date4,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date5,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date6,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date7,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date8,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date9,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date10,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date11,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date12,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date13,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date14,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date15,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date16,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date17,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date18,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date19,'DD.MM.YYYY') like $advancedCriteria.X or
+	            to_char(date20,'DD.MM.YYYY') like $advancedCriteria.X or
+	            
+	            lower(dict_get_value(dict_val_id1)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id2)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id3)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id4)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id5)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id6)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id7)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id8)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id9)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id10)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id11)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id12)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id13)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id14)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id15)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id16)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id17)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id18)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id19)) like $advancedCriteria.X or
+	            lower(dict_get_value(dict_val_id20)) like $advancedCriteria.X  
+	            )
+	    	</whereClause>
+	    </operationBinding> 	    
+	      
+	</operationBindings>
+    
+</DataSource>

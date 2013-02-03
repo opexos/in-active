@@ -1,0 +1,13 @@
+<DataSource		ID="role_conf_devices"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				requiresRole="admin"			
+				criteriaPolicy="DROPONCHANGE">
+				    
+    <fields>
+        <field name="ROLE_ID" 		type="integer"	primaryKey="true" />
+        <field name="MAP_ID"		type="integer"	primaryKey="true" foreignKey="maps.ID" required="true" />
+        <field name="MAP_NAME" 		includeFrom="maps.NAME"/>
+    </fields>
+    
+</DataSource>

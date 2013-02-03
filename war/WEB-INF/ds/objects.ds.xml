@@ -1,0 +1,58 @@
+<DataSource		ID="objects"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"					type="sequence"	primaryKey="true" />
+        <field name="NAME"					type="text"		required="true" length="100" />
+        <field name="COMMENT"				type="text"		length="1000" />
+        <field name="MAP_ID"				type="integer"	required="true"	foreignKey="maps.ID"/>
+        <field name="MAP_NAME"				includeFrom="maps.NAME" />
+        <field name="MAP_WITH_OBJECT"		type="text"		customSelectExpression="maps.NAME||' - '||objects.NAME" />
+        <field name="TYPE"					type="text"		required="true" />
+        <field name="SCRIPT_ID"				type="integer"	customSQL="true" />
+        <field name="LINKED"				type="boolean"	customSQL="true" />
+        <field name="ACCESS"				type="text"		customSelectExpression="object_access(objects.id)" />        
+    </fields>
+    
+	<script>
+	    modifyOnlyAdmin();
+		return dsRequest.execute();
+	</script>     
+    
+    <operationBindings>
+	    
+	    <operationBinding operationType="fetch" operationId="SCRIPT_LINK">  
+        	 <selectClause>$defaultSelectClause , ((select count(*) from object_scripts dms where dms.object_id = objects.id and dms.script_id = $advancedCriteria.SCRIPT_ID)>0) as linked</selectClause>  
+        </operationBinding>  
+        
+	    <operationBinding operationType="update" operationId="SCRIPT_LINK">  
+			<customSQL>
+			    #if ($values.LINKED=='true')
+					DO $$
+					BEGIN
+					  insert into object_scripts(script_id,object_id) 
+					  values($values.SCRIPT_ID,$values.ID);
+					EXCEPTION
+					  WHEN unique_violation THEN 
+					    NULL;
+					END;
+					$$ --        	    	
+				#else 
+					delete from object_scripts where script_id=$values.SCRIPT_ID and object_id=$values.ID 
+				#end
+			</customSQL>  
+        </operationBinding>
+        
+	     <operationBinding operationType="remove">  
+			<customSQL>DO $$ BEGIN PERFORM object_remove($advancedCriteria.ID); END $$ --</customSQL>  
+        </operationBinding>
+        
+	     <operationBinding operationType="fetch" operationId="WITH_ACCESS">  
+        	 <whereClause>$defaultWhereClause and object_access(objects.id) is not null</whereClause>  
+        </operationBinding>  
+		
+	</operationBindings>
+    
+</DataSource>

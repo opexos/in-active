@@ -1,0 +1,34 @@
+<DataSource		ID="scripts"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID" 		type="sequence" 	primaryKey="true" />
+        <field name="NAME" 		type="text" 		length="100" 	required="true"/>
+        <field name="TYPE" 		type="integer" 						required="true"/>
+        <field name="SCRIPT" 	type="text" />
+        <field name="PUBLIC"	type="boolean" />
+        <field name="ALL_DEVICE_TYPES"	type="boolean" />
+    </fields>
+    
+    
+	<script>
+	    modifyOnlyAdmin();
+		return dsRequest.execute();
+	</script>     
+    
+	
+	<operationBindings>
+	    
+	    <operationBinding operationType="fetch" operationId="OBJECT_SCRIPTS">  
+        	 <whereClause>$defaultWhereClause and 
+				(public=true or exists (select 1 from object_scripts dms where dms.object_id = $advancedCriteria.OBJECT_ID and dms.script_id = scripts.id)) and
+				($advancedCriteria.DEVICE_TYPE_ID=0 or all_device_types or exists (select 1 from device_type_scripts dts where dts.device_type_id = $advancedCriteria.DEVICE_TYPE_ID and dts.script_id = scripts.id))        	 	
+        	 </whereClause>
+        </operationBinding>  
+        
+	</operationBindings>  
+    
+
+</DataSource>

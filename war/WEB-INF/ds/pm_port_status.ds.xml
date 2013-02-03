@@ -1,0 +1,13 @@
+<DataSource		ID="pm_port_status"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID" 			type="sequence"	primaryKey="true" />
+        <field name="STATUS"		type="text" 	/>
+        <field name="CSS" 			type="text"  	/>
+        <field name="CSS_SELECTED" 	type="text"  	/>
+    </fields>
+    
+</DataSource>

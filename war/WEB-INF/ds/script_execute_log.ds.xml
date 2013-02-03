@@ -1,0 +1,32 @@
+<DataSource		ID="script_execute_log"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="ID"				type="integer"	primaryKey="true" />
+        <field name="DEV_HOST"			type="text" />
+        <field name="DEV_NAME"			type="text" />
+        <field name="WHEN_EXECUTE"		type="datetime" />
+        <field name="WHO_EXECUTE"		type="text"		customSelectExpression="user_get_name(who_execute)"/>
+        <field name="SCRIPT_NAME"		type="text" />
+        <field name="STATUS"			type="text" />
+        <field name="SCRIPT_PARAMS"		type="text"		customSQL="true"/>
+        <field name="CONSOLE"			type="text"		customSQL="true"/>
+        <field name="LOG"				type="text"		customSQL="true"/>
+        <field name="RESULT"			type="text" 	customSQL="true"/>
+    </fields>
+    
+	<script>
+	    checkJournalAccess();		
+		return dsRequest.execute();
+	</script>  	
+    
+    
+    <operationBindings>	    
+	    <operationBinding operationType="fetch" operationId="ALL" customFields="SCRIPT_PARAMS,CONSOLE,LOG,RESULT"/>	    
+	</operationBindings>
+    
+</DataSource>

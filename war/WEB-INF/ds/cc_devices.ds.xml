@@ -1,0 +1,53 @@
+<DataSource		ID="cc_devices"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"						type="sequence"	primaryKey="true" />
+        <field name="OBJECT_ID"					type="integer"	required="true" foreignKey="objects.ID"/>        
+        <field name="OBJECT_NAME"				includeFrom="objects.NAME"		/>
+        <field name="MAP_NAME"					includeFrom="objects.MAP_NAME"	/>        
+        <field name="GET_CONFIG_INTERVAL_SORT"	type="integer"	customSelectExpression="interval2int(GET_CONFIG_INTERVAL)" hidden="true"/>
+        <field name="GET_CONFIG_INTERVAL"		type="text"		required="true"		sortByField="GET_CONFIG_INTERVAL_SORT" />
+        <field name="STORE_CONFIG_DAYS"			type="integer"	required="true" />
+        <field name="DEVICE_ID"					type="integer"	required="true" foreignKey="devices.ID"/>
+		<field name="HOST_SORT"					type="integer"	customSelectExpression="ip2int(devices.host)" hidden="true"/>
+		<field name="HOST"						includeFrom="devices.HOST" sortByField="HOST_SORT" />
+        <field name="DEVICE_NAME"				includeFrom="devices.NAME"/>
+        <field name="LOCATION"					includeFrom="devices.LOCATION"/>
+        <field name="COMMENT"					includeFrom="devices.COMMENT"/>
+        <field name="DEVICE_TYPE_NAME"			includeFrom="devices.DEVICE_TYPE_NAME"/>
+        <field name="DEVICE_TYPE_ID"			includeFrom="devices.DEVICE_TYPE_ID"/>
+        <field name="HAS_UNCHECKED_CONFIG"		type="text"		customSelectExpression="cc_device_has_unchecked_config(cc_devices.id)"/>
+        <field name="LAST_GET_CONFIG_DATE"		type="datetime"	customSelectExpression="cc_device_last_get_config_date(cc_devices.id)"/>
+        <field name="LAST_GET_CONFIG_RESULT"	type="text"		customSelectExpression="cc_device_last_get_config_result(cc_devices.id)"/>
+        <field name="CONFIG"					type="text"		customSelectExpression="cc_device_get_current_config(cc_devices.id)" customSQL="true"/>
+    </fields>
+	
+	<script>
+	    if (DataSource.isModificationOperation(dsRequest.getOperationType())) {
+	    	def objId = values.OBJECT_ID
+	    	
+	    	if (objId == null)
+	    		objId = new DSRequest("cc_devices", "fetch", rpcManager).setCriteria("ID", values.ID).execute().getDataMap().OBJECT_ID
+	    		
+			if (!"FULL".equals(new DSRequest("objects", "fetch", rpcManager).setCriteria("ID", objId).execute().getDataMap().ACCESS))
+				throw new ExAccessDenied()
+		}
+		return dsRequest.execute()
+	</script>	        	        
+
+    <operationBindings>	    
+	    <operationBinding operationType="fetch">
+	    	<whereClause>$defaultWhereClause and object_access(object_id) is not null</whereClause>    
+	    </operationBinding>         
+
+	    <operationBinding operationType="fetch" operationId="WITH_CONFIG" customFields="CONFIG">
+	        <whereClause>$defaultWhereClause and object_access(object_id) is not null</whereClause>
+	    </operationBinding> 
+	    
+	</operationBindings> 
+	
+
+</DataSource>

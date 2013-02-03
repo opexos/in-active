@@ -1,0 +1,125 @@
+<DataSource		ID="pm_clients_arc"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="ID"			type="integer" primaryKey="true" hidden="true"/>
+        <field name="OBJECT_ID"		type="integer"	required="true" hidden="true"/>
+        <field name="IP_SORT" 		type="integer" hidden="true" customSelectExpression="ip2int(ip)" />
+        <field name="IP" 			type="text" sortByField="IP_SORT">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="MAC" 			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="VLAN" 			type="integer">
+            <validOperators>equals</validOperators>
+        </field>
+        <field name="NAME" 			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="FIRST_DETECT"	type="datetime">
+            <validOperators>between</validOperators>
+            <validOperators>greaterOrEqual</validOperators>
+            <validOperators>lessOrEqual</validOperators>
+        </field>
+        <field name="LAST_DETECT"	type="datetime">
+            <validOperators>between</validOperators>
+            <validOperators>greaterOrEqual</validOperators>
+            <validOperators>lessOrEqual</validOperators>
+        </field>
+        <field name="PORT"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+        </field>
+        <field name="COMMENT"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="LOCATION"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="TELCO"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="PATCH"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>        
+        <field name="TRUNK"			type="boolean">
+            <validOperators>iEquals</validOperators>
+        </field>
+        <field name="VOICE"			type="boolean">
+            <validOperators>iEquals</validOperators>
+        </field>
+        <field name="DEV_HOST_SORT" 	type="integer" hidden="true" customSelectExpression="ip2int(dev_host)" />
+        <field name="DEV_HOST"			type="text" sortByField="DEV_HOST_SORT">        
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+        </field>
+        <field name="DEV_NAME"	type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+        </field>
+        <field name="DEV_LOCATION"	type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="DEV_COMMENT"	type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        
+    </fields>    
+    
+</DataSource>

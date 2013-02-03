@@ -1,0 +1,13 @@
+<DataSource		ID="roles"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				requiresRole="admin"			
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID" 		type="sequence"	primaryKey="true" />
+        <field name="NAME" 		type="text" 	length="100" required="true"/>
+        <field name="COMMENT" 	type="text"  	length="1000"/>
+    </fields>
+    
+</DataSource>

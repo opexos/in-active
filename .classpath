@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/analytics.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-anim.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-awt-util.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-bridge.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-css.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-dom.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-ext.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-gvt.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-parser.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-script.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-svg-dom.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-util.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/batik-xml.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-beanutils-1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-digester-1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-jxpath-1.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-validator-1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/core-renderer.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/groovy-all-1.8.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isc-jakarta-oro-2.0.6.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_assembly.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_compression.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_contentexport.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_core_rpc.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/smartgwtee-3.1p/doc/server/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_hibernate.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_jpa.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_js_parser.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_realtime_messaging.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_spring.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_sql.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_struts.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_tools.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_web_services.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/iText-2.0.8.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/javassist-3.4.GA.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jtidy-r938.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/messaging.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/smartgwtee.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/smartgwtee-6.0p/doc/server/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/xml-apis-ext.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/icu4j-50_1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/hermes-1.2.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/backport-util-concurrent.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-configuration-1.7.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_autotest.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/velocity-1.7.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/dnsjava-2.1.5.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/ganymed-ssh2-261.jar" sourcepath="C:/EclipseWorkspace/ganymed-ssh2/ganymed-ssh2-261-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/EclipseWorkspace/ganymed-ssh2/ganymed-ssh2-261-javadoc.jar!/"/>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/smartgwt.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/smartgwtee-5.0p/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/operadriver-1.5.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jtcl-2.8.0.jar" sourcepath="C:/EclipseWorkspace/jtcl-2.8.0/src/main/java">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/jtcl-2.8.0/doc/apidocs/"/>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-fileupload-1.3.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-net-3.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-cli-1.3.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-dbcp-1.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/htmlunit-2.17.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/htmlunit-core-js-2.17.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/phantomjsdriver-1.2.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/slf4j-api-1.7.12.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/slf4j-log4j12-1.7.12.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/joda-time-2.9.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/poi-ooxml-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/poi-ooxml-schemas-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-5.0.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_cdi.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-validator-4.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-aop-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-beans-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-context-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-context-support-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-core-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-expression-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-jdbc-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-orm-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-tx-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-web-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-webmvc-4.1.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jetty-repacked-5.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/selenium-server-2.53.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/snmp4j-2.5.3.jar" sourcepath="C:/EclipseWorkspace/snmp4j-2.5.3/src/main/java">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/EclipseWorkspace/snmp4j-2.5.3/dist/snmp4j-2.5.3-javadoc.jar!/"/>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/postgresql-9.4.1212.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/hsqldb.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-user.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-api-checker.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-codeserver.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-dev.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-elemental.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-servlet-deps.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/requestfactory-apt.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/requestfactory-client.jar"/>
+	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/requestfactory-server.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

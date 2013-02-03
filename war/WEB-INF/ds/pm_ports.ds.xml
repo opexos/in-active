@@ -1,0 +1,86 @@
+<DataSource		ID="pm_ports"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE"				
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="ID"						type="sequence"	primaryKey="true" />
+        <field name="PM_DEVICE_ID"				type="integer"	required="true" />
+        <field name="PORT"						type="text"		length="100" required="true" />
+        <field name="VLAN"						type="integer"	/>
+        <field name="NET"						type="text"		customSelectExpression="pm_vlans.net" />
+        <field name="STATUS"					type="integer"	/>
+        <field name="STATUS_CSS"				type="text"		customSelectExpression="pm_port_status.css"/>
+        <field name="STATUS_CSS_SELECTED"		type="text"		customSelectExpression="pm_port_status.css_selected"/>
+        <field name="TRUNK"						type="text"		/>
+        <field name="COMMENT"					type="text"		length="1000" />
+        <field name="TELCO"						type="text"		length="100" />
+        <field name="PM_PATCH_ID"				type="integer"	/>
+        <field name="PATCH"						type="text"		length="100" customSelectExpression="pm_patch.patch"/>
+        <field name="LOCATION"					type="text"		length="1000" customSelectExpression="pm_patch.location"/>
+        <field name="OFFLINE_SORT"				type="integer"	customSelectExpression="(now()-offline)" hidden="true"/>
+        <field name="OFFLINE"					type="boolean"	customSelectExpression="(offline is not null)" sortByField="OFFLINE_SORT"/>
+        <field name="OFFLINE_LENGTH"			type="text"		customSelectExpression="get_date_interval(offline,now())" sortByField="OFFLINE_SORT"/>
+        
+       
+        
+        <field name="OBJECT_ID"					type="integer"	customSelectExpression="objects.id"/>
+        <field name="OBJECT_NAME"				type="text"		customSelectExpression="objects.name"/>
+        <field name="MAP_ID"					type="integer"	customSelectExpression="maps.id"/>
+        <field name="MAP_NAME"					type="text"		customSelectExpression="maps.name"/>
+        <field name="DEVICE_ID"					type="integer"	customSelectExpression="devices.id"/>
+        <field name="DEVICE_NAME"				type="text"		customSelectExpression="devices.name"/>
+        <field name="HOST_SORT"					type="integer"	customSelectExpression="ip2int(devices.host)" hidden="true"/>
+        <field name="HOST"						type="text"		customSelectExpression="devices.host" sortByField="HOST_SORT"/>
+        <field name="DEVICE_TYPE_NAME"			type="text"		customSelectExpression="device_types.name"/>
+        <field name="DEVICE_TYPE_ID"			type="integer"	customSelectExpression="device_types.id"/>
+        
+		<field name="IP_SORT"					type="integer"	customSelectExpression="ip2int(pm_port_get_clients(pm_ports.id, 'ip', false))" hidden="true"/>
+		<field name="IP"						type="text"		customSelectExpression="pm_port_get_clients(pm_ports.id, 'ip', false)" sortByField="IP_SORT"/>               
+		<field name="MAC"						type="text"		customSelectExpression="pm_port_get_clients(pm_ports.id, 'mac', false)" />
+		<field name="NETWORK_NAME"				type="text"		customSelectExpression="pm_port_get_clients(pm_ports.id, 'name', false)" />
+		<field name="NEIGHBOR"					type="boolean"	customSelectExpression="(SELECT COUNT(0) FROM PM_PORT_CLIENTS WHERE PM_PORT_ID = pm_ports.id AND NEIGHBOR=true)>0" />
+		<field name="CLIENTS_QTY"				type="integer"	customSelectExpression="pm_port_get_clients_qty(pm_ports.id, false)"/>
+		<field name="VOICE_QTY"					type="integer"	customSelectExpression="pm_port_get_clients_qty(pm_ports.id, true)"/>
+		<field name="VOICE_IP_SORT"				type="integer"	customSelectExpression="ip2int(pm_port_get_clients(pm_ports.id, 'ip', true))" hidden="true"/>
+		<field name="VOICE_IP"					type="text"		customSelectExpression="pm_port_get_clients(pm_ports.id, 'ip', true)" sortByField="VOICE_IP_SORT" />               
+		<field name="VOICE_MAC"					type="text"		customSelectExpression="pm_port_get_clients(pm_ports.id, 'mac', true)"	/>
+	</fields>
+	
+	<script>
+	    if (DataSource.isModificationOperation(dsRequest.getOperationType())) {
+	    	def rows;
+	    	if (values.PM_DEVICE_ID != null)
+	    		rows = query(sqlConnection, "select object_access(object_id) as access from pm_devices where id = ?", values.PM_DEVICE_ID);
+	    	else
+	    		rows = query(sqlConnection, "select object_access(object_id) as access from pm_ports a join pm_devices b on b.id = a.pm_device_id where a.id = ?", values.ID);
+			if (rows.size()==0) throw new ExNoDataFound();
+			if (!"FULL".equals(rows[0].ACCESS)) throw new ExAccessDenied();								
+		}
+		return dsRequest.execute()
+	</script>     
+    
+	<operationBindings>
+	     
+	    <operationBinding operationType="fetch">  
+			<tableClause>pm_ports
+			        join pm_devices on pm_ports.pm_device_id = pm_devices.id 
+			        join devices on devices.id = pm_devices.device_id
+			        join device_types on device_types.id = devices.device_type_id 
+			        join objects on objects.id = pm_devices.object_id
+			        join maps on maps.id = objects.map_id
+			   left join pm_vlans on pm_vlans.object_id = pm_devices.object_id and pm_vlans.vlan = pm_ports.vlan
+			   left join pm_patch on pm_patch.id = pm_ports.pm_patch_id
+			   left join pm_port_status on pm_port_status.id = pm_ports.status
+			</tableClause>
+			<whereClause>$defaultWhereClause and object_access(pm_devices.object_id) is not null</whereClause>	     
+        </operationBinding>	  
+        
+	    <operationBinding operationType="remove">  
+			<customSQL>DO $$ BEGIN PERFORM pm_port_remove($advancedCriteria.ID); END $$ --</customSQL>  
+        </operationBinding>
+
+	</operationBindings>
+
+</DataSource>

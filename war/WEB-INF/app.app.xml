@@ -1,0 +1,25 @@
+<Application>
+	<rpcBindings>
+		
+		<ServerObject ID="RPC" className="com.app.server.RPC">
+			<visibleMethods>
+				<method name="dummy"/>
+				<method name="getStartupInfo"/>
+				<method name="getLicenseInfo"/>
+				<method name="enterLicenseKey"/>
+				<method name="deleteLicenseKey"/>
+				<method name="parseInputVariables"/>
+			    <method name="parseInputVariables2"/>
+			    <method name="parseInputVariables3"/>
+				<method name="getSmtpSettings"/>
+			    <method name="saveSmtpSettings"/>
+				<method name="testSmtpSettings"/>
+				<method name="executeScriptDM"/>
+				<method name="executeScriptCC"/>
+				<method name="executeScriptPM"/>				
+			</visibleMethods>
+		</ServerObject>
+		
+				
+	</rpcBindings>
+</Application>

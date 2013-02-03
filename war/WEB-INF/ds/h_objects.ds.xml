@@ -1,0 +1,28 @@
+<DataSource		ID="h_objects"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="PK"					type="integer"	primaryKey="true" />
+        <field name="WHO_MODIFY"			type="text"		customSelectExpression="user_get_name(who_modify)"	/>
+        <field name="WHEN_MODIFY"			type="datetime"	/>
+        <field name="ACTION"				type="text"	/>
+        <field name="ID"					type="integer"	/>
+        <field name="OLD_MAP_NAME"			type="text"	/>
+        <field name="OLD_NAME"				type="text"	/>
+        <field name="OLD_COMMENT"			type="text"	/>
+        <field name="NEW_MAP_NAME"			type="text"	/>
+        <field name="NEW_NAME"				type="text"	/>
+        <field name="NEW_COMMENT"			type="text"	/>
+    </fields>
+    
+	<script>
+	    checkJournalAccess();		
+		return dsRequest.execute();
+	</script>  	
+    
+      
+</DataSource>

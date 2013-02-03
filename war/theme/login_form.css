@@ -1,0 +1,51 @@
+input {
+	
+  width: 100%;
+}
+input#login {width: 30%;}
+p,td,input,a {
+  font-family: arial,tahoma,verdana,sans-serif;
+  font-size: 15px;
+}
+p,td{
+  color: white;
+}
+td#errMsg{
+  color: #FF4E4E;
+}
+ 
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 220px;
+  background-color: #1c4e94;
+  /*border-radius: 5px;*/
+  border: 1px solid #3f76b0;
+  padding: 20px;
+  box-shadow: rgba(0,0,0,0.5) 0px 0px 50px;
+}
+
+.login-tab {
+  width:100%;
+  height:100%;
+}  
+
+a:link, 
+a:visited,
+a:active,
+a:hover { 
+  text-decoration: none;   
+  color: silver;
+  font-size: 13px;
+} 
+
+a:active,
+a:hover {
+	color: white;
+}

@@ -1,0 +1,33 @@
+<DataSource		ID="upload"	
+    			serverType="sql"
+				requiresAuthentication="true">
+				
+    <fields>
+        <field name="FILE"	type="binary" />
+    </fields>    
+    
+	<operationBindings>
+	    
+		<operationBinding operationType="add" operationId="UPLOAD_PORTS">
+		    <serverObject className="com.app.server.DMI" methodName="uploadPorts"/>
+		</operationBinding>
+						
+		<operationBinding operationType="add" operationId="UPLOAD_DEVICES">
+		    <serverObject className="com.app.server.DMI" methodName="uploadDevices"/>
+		</operationBinding>
+		
+		<operationBinding operationType="add" operationId="UPLOAD_DM_DEVICES">
+		    <serverObject className="com.app.server.DMI" methodName="uploadDMDevices"/>
+		</operationBinding>
+		
+		<operationBinding operationType="add" operationId="UPLOAD_VLANS">
+		    <serverObject className="com.app.server.DMI" methodName="uploadVlans"/>
+		</operationBinding>
+		
+		<operationBinding operationType="add" operationId="UPLOAD_PM_PATCH">
+		    <serverObject className="com.app.server.DMI" methodName="uploadPMPatch"/>
+		</operationBinding>
+				
+	</operationBindings>
+
+</DataSource>

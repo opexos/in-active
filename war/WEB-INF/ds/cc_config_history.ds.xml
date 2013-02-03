@@ -1,0 +1,52 @@
+<DataSource		ID="cc_config_history"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"				type="integer"	primaryKey="true" />
+        <field name="CC_DEVICE_ID"		type="integer"	/>
+        <field name="CONFIG_DATE"		type="datetime"	/>
+        <field name="CONFIG"			type="text"		customSQL="true"/>
+        <field name="CHECKED"			type="text"		customSelectExpression="(when_checked is not null)"/>        
+        <field name="WHEN_CHECKED"		type="datetime" />
+        <field name="WHO_CHECKED"		type="text"		customSelectExpression="user_get_name(who_checked)"/>
+    </fields>
+    
+    <operationBindings>
+	    
+	    <operationBinding operationType="fetch" operationId="DOWNLOAD" customFields="CONFIG">  
+        	 <serverObject className="com.app.server.DMI" methodName="download"/>  
+        </operationBinding>  
+		
+	    <operationBinding operationType="fetch" operationId="COMPARE"> 
+        	 <serverObject className="com.app.server.DMI" methodName="compare"/>
+        	 <selectClause>CONFIG</selectClause>  
+        </operationBinding>  
+        
+	    <operationBinding operationType="fetch" operationId="WITH_CONFIG" customFields="CONFIG"/>
+	    
+	    <operationBinding operationType="update" operationId="SET_CHECKED">
+	        <script>			    
+				def rows = query(sqlConnection, "select object_access(object_id) as access from cc_config_history a join cc_devices b on b.id = a.cc_device_id where a.id = ?", values.ID);
+				if (rows.size()==0) throw new ExNoDataFound();
+				if (!"FULL".equals(rows[0].ACCESS)) throw new ExAccessDenied();								
+				return dsRequest.execute();
+			</script>
+	        <valuesClause>when_checked=now(), who_checked=user_id()</valuesClause>
+	    </operationBinding>	        
+
+	    <operationBinding operationType="update" operationId="SET_ALL_CHECKED_BY_CC_DEVICE_ID" allowMultiUpdate="true">
+	        <script>			    
+				def rows = query(sqlConnection, "select object_access(object_id) as access from cc_devices where id = ?", values.CC_DEVICE_ID);
+				if (rows.size()==0) throw new ExNoDataFound();
+				if (!"FULL".equals(rows[0].ACCESS)) throw new ExAccessDenied();								
+				return dsRequest.execute();
+			</script>
+	        <valuesClause>when_checked=now(), who_checked=user_id()</valuesClause>
+	        <whereClause>cc_device_id = $values.CC_DEVICE_ID and when_checked is null</whereClause>
+	    </operationBinding>	        
+	    
+	</operationBindings>
+    
+</DataSource>

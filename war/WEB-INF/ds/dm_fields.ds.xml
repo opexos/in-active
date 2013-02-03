@@ -1,0 +1,144 @@
+<DataSource		ID="dm_fields"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="OBJECT_ID"		type="integer"	primaryKey="true" foreignKey="objects.ID" />
+        <field name="MAP_NAME"		type="text"		includeFrom="objects.MAP_NAME"/>
+        <field name="OBJECT_NAME"	type="text"		includeFrom="objects.NAME"/>
+        
+        <field name="DATE1"			type="text" 	length="100" />
+        <field name="DATE2"			type="text" 	length="100" />
+        <field name="DATE3"			type="text" 	length="100" />
+        <field name="DATE4"			type="text" 	length="100" />
+        <field name="DATE5"			type="text" 	length="100" />
+        <field name="DATE6"			type="text" 	length="100" />
+        <field name="DATE7"			type="text" 	length="100" />
+        <field name="DATE8"			type="text" 	length="100" />
+        <field name="DATE9"			type="text" 	length="100" />
+        <field name="DATE10"		type="text" 	length="100" />
+        <field name="DATE11"		type="text" 	length="100" />
+        <field name="DATE12"		type="text" 	length="100" />
+        <field name="DATE13"		type="text" 	length="100" />
+        <field name="DATE14"		type="text" 	length="100" />
+        <field name="DATE15"		type="text" 	length="100" />
+        <field name="DATE16"		type="text" 	length="100" />
+        <field name="DATE17"		type="text" 	length="100" />
+        <field name="DATE18"		type="text" 	length="100" />
+        <field name="DATE19"		type="text" 	length="100" />
+        <field name="DATE20"		type="text" 	length="100" />
+        
+        <field name="BOOL1"			type="text" 	length="100" />
+        <field name="BOOL2"			type="text" 	length="100" />
+        <field name="BOOL3"			type="text" 	length="100" />
+        <field name="BOOL4"			type="text" 	length="100" />
+        <field name="BOOL5"			type="text" 	length="100" />
+        <field name="BOOL6"			type="text" 	length="100" />
+        <field name="BOOL7"			type="text" 	length="100" />
+        <field name="BOOL8"			type="text" 	length="100" />
+        <field name="BOOL9"			type="text" 	length="100" />
+        <field name="BOOL10"		type="text" 	length="100" />
+        <field name="BOOL11"		type="text" 	length="100" />
+        <field name="BOOL12"		type="text" 	length="100" />
+        <field name="BOOL13"		type="text" 	length="100" />
+        <field name="BOOL14"		type="text" 	length="100" />
+        <field name="BOOL15"		type="text" 	length="100" />
+        <field name="BOOL16"		type="text" 	length="100" />
+        <field name="BOOL17"		type="text" 	length="100" />
+        <field name="BOOL18"		type="text" 	length="100" />
+        <field name="BOOL19"		type="text" 	length="100" />
+        <field name="BOOL20"		type="text" 	length="100" />
+        
+        <field name="IP1"			type="text" 	length="100" />
+        <field name="IP2"			type="text" 	length="100" />
+        <field name="IP3"			type="text" 	length="100" />
+        <field name="IP4"			type="text" 	length="100" />
+        <field name="IP5"			type="text" 	length="100" />
+        <field name="IP6"			type="text" 	length="100" />
+        <field name="IP7"			type="text" 	length="100" />
+        <field name="IP8"			type="text" 	length="100" />
+        <field name="IP9"			type="text" 	length="100" />
+        <field name="IP10"			type="text" 	length="100" />
+        <field name="IP11"			type="text" 	length="100" />
+        <field name="IP12"			type="text" 	length="100" />
+        <field name="IP13"			type="text" 	length="100" />
+        <field name="IP14"			type="text" 	length="100" />
+        <field name="IP15"			type="text" 	length="100" />
+        <field name="IP16"			type="text" 	length="100" />
+        <field name="IP17"			type="text" 	length="100" />
+        <field name="IP18"			type="text" 	length="100" />
+        <field name="IP19"			type="text" 	length="100" />
+        <field name="IP20"			type="text" 	length="100" />
+        
+        <field name="TEXT1"			type="text" 	length="100" />
+        <field name="TEXT2"			type="text" 	length="100" />
+        <field name="TEXT3"			type="text" 	length="100" />
+        <field name="TEXT4"			type="text" 	length="100" />
+        <field name="TEXT5"			type="text" 	length="100" />
+        <field name="TEXT6"			type="text" 	length="100" />
+        <field name="TEXT7"			type="text" 	length="100" />
+        <field name="TEXT8"			type="text" 	length="100" />
+        <field name="TEXT9"			type="text" 	length="100" />
+        <field name="TEXT10"		type="text" 	length="100" />        
+        <field name="TEXT11"		type="text" 	length="100" />
+        <field name="TEXT12"		type="text" 	length="100" />
+        <field name="TEXT13"		type="text" 	length="100" />
+        <field name="TEXT14"		type="text" 	length="100" />
+        <field name="TEXT15"		type="text" 	length="100" />
+        <field name="TEXT16"		type="text" 	length="100" />
+        <field name="TEXT17"		type="text" 	length="100" />
+        <field name="TEXT18"		type="text" 	length="100" />
+        <field name="TEXT19"		type="text" 	length="100" />
+        <field name="TEXT20"		type="text" 	length="100" />        
+
+        <field name="DICT1"			type="text" 	length="100" />
+        <field name="DICT2"			type="text" 	length="100" />
+        <field name="DICT3"			type="text" 	length="100" />
+        <field name="DICT4"			type="text" 	length="100" />
+        <field name="DICT5"			type="text" 	length="100" />
+        <field name="DICT6"			type="text" 	length="100" />
+        <field name="DICT7"			type="text" 	length="100" />
+        <field name="DICT8"			type="text" 	length="100" />
+        <field name="DICT9"			type="text" 	length="100" />
+        <field name="DICT10"		type="text" 	length="100" />
+        <field name="DICT11"		type="text" 	length="100" />
+        <field name="DICT12"		type="text" 	length="100" />
+        <field name="DICT13"		type="text" 	length="100" />
+        <field name="DICT14"		type="text" 	length="100" />
+        <field name="DICT15"		type="text" 	length="100" />
+        <field name="DICT16"		type="text" 	length="100" />
+        <field name="DICT17"		type="text" 	length="100" />
+        <field name="DICT18"		type="text" 	length="100" />
+        <field name="DICT19"		type="text" 	length="100" />
+        <field name="DICT20"		type="text" 	length="100" />
+        
+        <field name="DICT_ID1"		type="integer" 	 />
+        <field name="DICT_ID2"		type="integer" 	 />
+        <field name="DICT_ID3"		type="integer" 	 />
+        <field name="DICT_ID4"		type="integer" 	 />
+        <field name="DICT_ID5"		type="integer" 	 />
+        <field name="DICT_ID6"		type="integer" 	 />
+        <field name="DICT_ID7"		type="integer" 	 />
+        <field name="DICT_ID8"		type="integer" 	 />
+        <field name="DICT_ID9"		type="integer" 	 />
+        <field name="DICT_ID10"		type="integer" 	 />
+        <field name="DICT_ID11"		type="integer" 	 />
+        <field name="DICT_ID12"		type="integer" 	 />
+        <field name="DICT_ID13"		type="integer" 	 />
+        <field name="DICT_ID14"		type="integer" 	 />
+        <field name="DICT_ID15"		type="integer" 	 />
+        <field name="DICT_ID16"		type="integer" 	 />
+        <field name="DICT_ID17"		type="integer" 	 />
+        <field name="DICT_ID18"		type="integer" 	 />
+        <field name="DICT_ID19"		type="integer" 	 />
+        <field name="DICT_ID20"		type="integer" 	 />
+        
+    </fields>
+    
+	<script>
+	    modifyOnlyAdmin();
+		return dsRequest.execute();
+	</script>    
+    
+</DataSource>

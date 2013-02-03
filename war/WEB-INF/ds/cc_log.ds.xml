@@ -1,0 +1,22 @@
+<DataSource		ID="cc_log"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"						type="integer"	primaryKey="true" />
+        <field name="CC_DEVICE_ID"				type="integer"	/>
+        <field name="LOG_DATE"					type="datetime"	/>
+        <field name="RESULT"					type="text"	/>
+        <field name="ERROR_LOG"					type="text"	/>
+    </fields>
+    
+    <operationBindings>
+	    
+	    <operationBinding operationType="fetch" operationId="DOWNLOAD">  
+        	 <serverObject className="com.app.server.DMI" methodName="download"/>  
+        </operationBinding>  
+		
+	</operationBindings>
+    
+</DataSource>

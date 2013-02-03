@@ -1,0 +1,21 @@
+<DataSource		ID="console_log"	
+				serverType="sql"
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="DEVICE_HOST" 	type="text" />
+        <field name="DEVICE_NAME" 	type="text" />
+        <field name="WHO_SENT" 		type="text"		customSelectExpression="user_get_name(who_sent)"/>
+        <field name="WHEN_SENT" 	type="datetime" />
+        <field name="COMMAND" 		type="text" />
+    </fields>
+    
+	<script>
+	    checkJournalAccess();
+		return dsRequest.execute();
+	</script>  	
+
+</DataSource>

@@ -1,0 +1,141 @@
+<DataSource		ID="pm_port_clients"	
+				tableName="v_pm_port_clients"   	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE"				
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="ID"			type="integer" primaryKey="true" hidden="true"/>
+        <field name="PM_PORT_ID"	type="integer" hidden="true" />
+        <field name="NEIGHBOR"		type="boolean" hidden="true"/>
+        <field name="OBJECT_ID"		type="integer" hidden="true"/>
+        <field name="IP_SORT" 		type="integer" hidden="true" customSelectExpression="ip2int(ip)" />
+        <field name="IP" 			type="text" sortByField="IP_SORT">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="MAC" 			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="VLAN" 			type="integer">
+            <validOperators>iEquals</validOperators>
+        </field>
+        <field name="NAME" 			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="FIRST_DETECT"	type="datetime">
+            <validOperators>between</validOperators>
+            <validOperators>greaterOrEqual</validOperators>
+            <validOperators>lessOrEqual</validOperators>
+        </field>
+        <field name="LAST_DETECT"	type="datetime">
+            <validOperators>between</validOperators>
+            <validOperators>greaterOrEqual</validOperators>
+            <validOperators>lessOrEqual</validOperators>
+        </field>
+        <field name="VOICE"			type="boolean">
+            <validOperators>iEquals</validOperators>
+        </field>         
+        <field name="TRUNK"			type="boolean">
+            <validOperators>iEquals</validOperators>
+        </field>         
+        <field name="PORT"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+        </field>
+        <field name="TELCO"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+		</field>
+        <field name="PATCH"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="LOCATION"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="COMMENT"			type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="DEV_HOST_SORT" 	type="integer" hidden="true" customSelectExpression="ip2int(dev_host)" />
+        <field name="DEV_HOST"			type="text" sortByField="DEV_HOST_SORT">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+        </field>
+        <field name="DEV_NAME"	type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+        </field>
+        <field name="DEV_LOCATION"	type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+        <field name="DEV_COMMENT"	type="text">
+            <validOperators>iEquals</validOperators>
+            <validOperators>iContains</validOperators>
+            <validOperators>iStartsWith</validOperators>
+            <validOperators>iEndsWith</validOperators>
+            <validOperators>isNull</validOperators>
+            <validOperators>notNull</validOperators>
+        </field>
+    </fields>
+    
+	<script>
+	    if (DataSource.isModificationOperation(dsRequest.getOperationType())) {
+	    	def rows = query(sqlConnection, "select object_access(object_id) as access from v_pm_port_clients where id = ?", values.ID);
+			if (rows.size()==0) throw new ExNoDataFound();
+			if (!"FULL".equals(rows[0].ACCESS)) throw new ExAccessDenied();								
+		}
+		return dsRequest.execute()
+	</script>   
+    
+    <operationBindings>	    
+		<operationBinding operationType="update" >
+		    <customSQL>DO $$ BEGIN PERFORM pm_port_client_to_archive($advancedCriteria.ID); END $$ --</customSQL>		    		    
+		</operationBinding>		
+	</operationBindings>
+    
+</DataSource>

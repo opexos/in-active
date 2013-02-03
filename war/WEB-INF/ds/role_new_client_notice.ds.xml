@@ -1,0 +1,15 @@
+<DataSource		ID="role_new_client_notice"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				requiresRole="admin"			
+				criteriaPolicy="DROPONCHANGE">
+				    
+    <fields>
+        <field name="ROLE_ID" 		type="integer"	primaryKey="true" required="true"/>
+        <field name="OBJECT_ID"		type="integer"	primaryKey="true" foreignKey="objects.ID" required="true"/>
+        <field name="OBJECT_NAME" 	includeFrom="objects.NAME"/>
+		<field name="MAP_NAME" 		includeFrom="objects.MAP_NAME"/>
+        
+    </fields>
+    
+</DataSource>

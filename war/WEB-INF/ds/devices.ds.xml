@@ -1,0 +1,80 @@
+<DataSource		ID="devices"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID" 				type="sequence"   									primaryKey="true"/>
+        <field name="NAME" 				type="text" 	length="100"	required="true"		/>
+        <field name="LOCATION" 			type="text"  	length="1000"						/>
+        <field name="COMMENT" 			type="text"  	length="1000"						/>
+        <field name="DEVICE_TYPE_ID" 	type="integer"  				required="true" 	foreignKey="device_types.ID"/>
+        <field name="DEVICE_TYPE_NAME"	includeFrom="device_types.NAME" />
+        <field name="HOST" 				type="text" 	length="100"	required="true"		/>
+        <field name="LOGIN" 			type="text" 	length="50"		/>
+		<field name="PWD" 				type="text" 	length="50"		/>
+        <field name="ENABLE_PWD"		type="text" 	length="50"		/>		
+        <field name="CONNECT_TYPE"		type="text" 							/>
+        <field name="CONSOLE_PORT"		type="integer" 							/>
+        <field name="SNMP_VERSION"		type="integer"  				 		/>
+        <field name="READ_COMMUNITY"	type="text" 	length="50"		/>
+        <field name="WRITE_COMMUNITY"	type="text" 	length="50"		/>
+        <field name="SNMP_USER"			type="text" 	length="50"		/>
+        <field name="SNMP_AUTH_PROT"	type="text" 	length="50"		/>
+        <field name="SNMP_AUTH_PWD"		type="text" 	length="50"		/>
+        <field name="SNMP_PRIV_PROT"	type="text" 	length="50"		/>
+        <field name="SNMP_PRIV_PWD"		type="text" 	length="50"		/>        
+        <field name="SNMP_PORT"			type="integer" 							/>
+        <field name="MAP_ID"		 	type="integer"  				required="true"		foreignKey="maps.ID"/>
+        <field name="MAP_NAME"		 	includeFrom="maps.NAME"/>
+        <field name="OBJECT_ID"		 	type="integer"  				customSQL="true" 	/>
+    </fields>
+
+	<script>
+	    if (DataSource.isModificationOperation(dsRequest.getOperationType())) {
+			def mapId = values.MAP_ID;
+			if (mapId==null) {
+			  def rows = query(sqlConnection, "select map_id from devices where id = ?", values.ID);
+			  if (rows.size()==0) throw new ExNoDataFound();
+			  mapId = rows[0].MAP_ID;
+			}
+			def rows = query(sqlConnection,"select map_config_devices(id) a from maps where id = ?", mapId);
+			if (rows.size()==0) throw new ExNoDataFound();
+			if (!rows[0].A)
+			  throw new ExAccessDenied();
+		}
+		
+		if (DataSource.isAddOrUpdate(dsRequest.getOperationType()))
+			return com.app.server.Devices.encode(dsRequest);
+		else if (DataSource.isFetch(dsRequest.getOperationType()))
+			return com.app.server.Devices.decode(dsRequest);
+		else		
+			return dsRequest.execute();
+	</script>  
+    
+	<operationBindings>
+	    
+	    <operationBinding operationType="fetch">
+	         <whereClause>$defaultWhereClause and map_config_devices(devices.map_id)</whereClause>
+		</operationBinding>
+	    
+	    <operationBinding operationType="fetch" operationId="NOT_EXISTS_IN_CC_DEVICES" outputs="ID,HOST,NAME,DEVICE_TYPE_NAME,LOCATION,COMMENT">
+	         <whereClause>$defaultWhereClause and not exists (select 1 from cc_devices c where c.device_id = devices.id and c.object_id = $advancedCriteria.OBJECT_ID) and object_access($advancedCriteria.OBJECT_ID)='FULL' and map_id = (select map_id from objects where id = $advancedCriteria.OBJECT_ID)</whereClause>
+		</operationBinding>
+	    
+	    <operationBinding operationType="fetch" operationId="NOT_EXISTS_IN_PM_DEVICES" outputs="ID,HOST,NAME,DEVICE_TYPE_NAME,LOCATION,COMMENT">
+	         <whereClause>$defaultWhereClause and not exists (select 1 from pm_devices c where c.device_id = devices.id and c.object_id = $advancedCriteria.OBJECT_ID) and object_access($advancedCriteria.OBJECT_ID)='FULL' and map_id = (select map_id from objects where id = $advancedCriteria.OBJECT_ID)</whereClause>
+		</operationBinding>
+	    
+	    <operationBinding operationType="fetch" operationId="NOT_EXISTS_IN_DM_DEVICES" outputs="ID,HOST,NAME,DEVICE_TYPE_NAME,LOCATION,COMMENT">
+	         <whereClause>$defaultWhereClause and not exists (select 1 from dm_devices c where c.device_id = devices.id and c.object_id = $advancedCriteria.OBJECT_ID) and object_access($advancedCriteria.OBJECT_ID)='FULL' and map_id = (select map_id from objects where id = $advancedCriteria.OBJECT_ID)</whereClause>
+		</operationBinding>
+		
+	    <operationBinding operationType="remove">  
+			<customSQL>DO $$ BEGIN PERFORM device_remove($advancedCriteria.ID); END $$ --</customSQL>  
+        </operationBinding>
+	    	    	
+	</operationBindings>
+    
+
+</DataSource>

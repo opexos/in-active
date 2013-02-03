@@ -1,0 +1,71 @@
+<DataSource		ID="device_types"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"						type="sequence"	primaryKey="true" />
+        <field name="NAME"						type="text"		required="true" length="100" />
+
+		<field name="CC_GET_CONFIG"				type="integer"	/>
+		<field name="CONSOLE_AUTH"				type="integer"	/>
+		<field name="CONSOLE_LOG"				type="integer"	/>
+		<field name="PM_PORT_INFO"				type="integer"	/>
+		<field name="PM_VLAN_LIST"				type="integer"	/>
+		<field name="PM_REFRESH_DATA"			type="integer"	/>
+		<field name="PM_PORT_ON"				type="integer"	/>
+		<field name="PM_PORT_OFF"				type="integer"	/>
+		<field name="PM_PORT_CHANGE_SPEED"		type="integer"	/>
+		<field name="PM_PORT_CHANGE_DUPLEX"		type="integer"	/>
+		<field name="PM_PORT_CHANGE_VLAN"		type="integer"	/>
+
+		<field name="CC_GET_CONFIG_NAME"			type="text"		customSelectExpression="script_get_name( CC_GET_CONFIG )" />
+		<field name="CONSOLE_AUTH_NAME"				type="text"		customSelectExpression="script_get_name( CONSOLE_AUTH )" />
+		<field name="CONSOLE_LOG_NAME"				type="text"		customSelectExpression="script_get_name( CONSOLE_LOG )" />
+		<field name="PM_PORT_INFO_NAME"				type="text"		customSelectExpression="script_get_name( PM_PORT_INFO )" />
+		<field name="PM_VLAN_LIST_NAME"				type="text"		customSelectExpression="script_get_name( PM_VLAN_LIST )" />
+		<field name="PM_REFRESH_DATA_NAME"			type="text"		customSelectExpression="script_get_name( PM_REFRESH_DATA )" />
+		<field name="PM_PORT_ON_NAME"				type="text"		customSelectExpression="script_get_name( PM_PORT_ON )" />
+		<field name="PM_PORT_OFF_NAME"				type="text"		customSelectExpression="script_get_name( PM_PORT_OFF )" />
+		<field name="PM_PORT_CHANGE_SPEED_NAME"		type="text"		customSelectExpression="script_get_name( PM_PORT_CHANGE_SPEED )" />
+		<field name="PM_PORT_CHANGE_DUPLEX_NAME"	type="text"		customSelectExpression="script_get_name( PM_PORT_CHANGE_DUPLEX )" />
+		<field name="PM_PORT_CHANGE_VLAN_NAME"		type="text"		customSelectExpression="script_get_name( PM_PORT_CHANGE_VLAN )" />
+		
+		<field name="SCRIPT_ID"					type="integer"	customSQL="true" />
+        <field name="LINKED"					type="boolean"	customSQL="true" />
+
+	</fields>
+	
+	<script>
+	    modifyOnlyAdmin();
+		return dsRequest.execute();
+	</script>    
+	
+	<operationBindings>
+	    
+	    <operationBinding operationType="fetch" operationId="SCRIPT_LINK">  
+        	 <selectClause>$defaultSelectClause , ((select count(*) from device_type_scripts dms where dms.device_type_id = device_types.id and dms.script_id = $advancedCriteria.SCRIPT_ID)>0) as linked</selectClause>  
+        </operationBinding>  
+        
+	    <operationBinding operationType="update" operationId="SCRIPT_LINK">  
+			<customSQL>
+			    #if ($values.LINKED=='true')
+					DO $$
+					BEGIN
+					  insert into device_type_scripts(script_id,device_type_id) 
+					  values($values.SCRIPT_ID,$values.ID);
+					EXCEPTION
+					  WHEN unique_violation THEN 
+					    NULL;
+					END;
+					$$ --        	    	
+				#else 
+					delete from device_type_scripts where script_id=$values.SCRIPT_ID and device_type_id=$values.ID 
+				#end
+			</customSQL>  
+        </operationBinding>       
+		
+	</operationBindings>
+    
+
+</DataSource>

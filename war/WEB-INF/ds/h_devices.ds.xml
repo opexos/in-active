@@ -1,0 +1,63 @@
+<DataSource		ID="h_devices"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE"
+				progressiveLoading="true"
+				sqlPaging="SQLLIMIT">
+    
+    <fields>
+        <field name="PK"					type="integer"	primaryKey="true" />
+        <field name="WHO_MODIFY"			type="text"		customSelectExpression="user_get_name(who_modify)"	/>
+        <field name="WHEN_MODIFY"			type="datetime"	/>
+        <field name="ACTION"				type="text"	/>
+        <field name="ID"					type="integer"	/>
+        <field name="MAP"					type="text"	/>
+        
+  		<field name="OLD_NAME"				type="text"	/> 
+  		<field name="OLD_LOCATION"			type="text"	/> 
+  		<field name="OLD_COMMENT"			type="text"	/> 
+		<field name="OLD_DEVICE_TYPE"		type="text"	/> 
+		<field name="OLD_HOST"				type="text"	/> 
+		<field name="OLD_LOGIN"				type="text"	/> 
+		<field name="OLD_PWD"				type="text"	/> 
+		<field name="OLD_ENABLE_PWD"		type="text"	/> 
+		<field name="OLD_CONNECT_TYPE"		type="text"	/>   
+		<field name="OLD_CONSOLE_PORT"		type="integer"	/> 
+		<field name="OLD_SNMP_VERSION"		type="integer"	/> 
+		<field name="OLD_SNMP_PORT"			type="integer"	/>   
+		<field name="OLD_READ_COMMUNITY"	type="text"	/>   
+		<field name="OLD_WRITE_COMMUNITY"	type="text"	/> 
+        <field name="OLD_SNMP_USER"			type="text" 		/>
+        <field name="OLD_SNMP_AUTH_PROT"	type="text" 		/>
+        <field name="OLD_SNMP_AUTH_PWD"		type="text" 		/>
+        <field name="OLD_SNMP_PRIV_PROT"	type="text" 		/>
+        <field name="OLD_SNMP_PRIV_PWD"		type="text" 		/>        
+		
+		<field name="NEW_NAME"				type="text"	/> 
+  		<field name="NEW_LOCATION"			type="text"	/> 
+  		<field name="NEW_COMMENT"			type="text"	/> 
+		<field name="NEW_DEVICE_TYPE"		type="text"	/> 
+		<field name="NEW_HOST"				type="text"	/> 
+		<field name="NEW_LOGIN"				type="text"	/> 
+		<field name="NEW_PWD"				type="text"	/> 
+		<field name="NEW_ENABLE_PWD"		type="text"	/> 
+		<field name="NEW_CONNECT_TYPE"		type="text"	/>   
+		<field name="NEW_CONSOLE_PORT"		type="integer"	/> 
+		<field name="NEW_SNMP_VERSION"		type="integer"	/> 
+		<field name="NEW_SNMP_PORT"			type="integer"	/>   
+		<field name="NEW_READ_COMMUNITY"	type="text"	/>   
+		<field name="NEW_WRITE_COMMUNITY"	type="text"	/>
+        <field name="NEW_SNMP_USER"			type="text" 		/>
+        <field name="NEW_SNMP_AUTH_PROT"	type="text" 		/>
+        <field name="NEW_SNMP_AUTH_PWD"		type="text" 		/>
+        <field name="NEW_SNMP_PRIV_PROT"	type="text" 		/>
+        <field name="NEW_SNMP_PRIV_PWD"		type="text" 		/>        
+		 
+	</fields>
+	
+	<script>
+	    checkJournalAccess();			
+		return com.app.server.Devices.decode(dsRequest);
+	</script>  	
+	   
+</DataSource>

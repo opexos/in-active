@@ -1,0 +1,19 @@
+<DataSource		ID="dict_values"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID" 		type="sequence"	primaryKey="true" />
+        <field name="DICT_ID"	type="integer"	required="true"/>
+        <field name="VAL" 		type="text"  	length="1000"	required="true"/>
+    </fields>    
+    
+	<script>
+	    modifyOnlyAdmin();
+		return dsRequest.execute();
+	</script>   
+    
+	
+
+</DataSource>

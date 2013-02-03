@@ -1,0 +1,19 @@
+<DataSource		ID="users"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				requiresRole="admin"			
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID" 		type="sequence"	primaryKey="true" />
+        <field name="NAME" 		type="text" 	length="100" required="true"/>
+        <field name="LOGIN" 	type="text" 	length="100" required="true"/>
+        <field name="PWD" 		type="text"  	length="100" required="true"/>
+        <field name="EMAIL" 	type="text"  	length="100" />
+        <field name="COMMENT" 	type="text"  	length="1000"/>
+        <field name="ADMIN" 	type="boolean" 	/>
+        <field name="LOCKED" 	type="boolean" 	/>
+        <field name="JOURNALS" 	type="boolean" 	/>
+    </fields>
+    
+</DataSource>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+                   <param name="ConversionPattern"
+		                  value="=== %d [%.4t] %-5p %c{1} - %m%n"/>
+		</layout>		
+	</appender>
+
+	<appender name="FILE_LOG" class="org.apache.log4j.FileAppender">
+            <param name="File"   value="/smartClientServerLog.txt" />
+            <param name="Append" value="false" />	    	
+            <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="=== %d [%.4t] %-5p %c{1} - %m%n"/>
+            </layout>	    
+	</appender>
+
+    <!-- This appender is used by the "Server Logs" tab in the Developer Console. -->
+	<appender name="SmartClientLog" class="com.isomorphic.log.RevolvingMemoryAppender">
+	    <param name="maxEntries" value="500"/>
+        <layout class="org.apache.log4j.PatternLayout">
+                   <param name="ConversionPattern"
+		                  value="=== %d [%.4t] %-5p %c{1} - %m%n"/>
+		</layout>	
+	</appender>
+
+    <!-- isomorphic log messages -->
+    <!-- The STDOUT appender defined above is set as the default appender for all Isomorphic
+         SmartClient server logging.  It should typically be visible in the console from which
+         you started the application server.
+         
+         Some Application Servers redirect stdout output to a file (typically called stdout.log
+         or something like that, so you should be able to find it there.
+
+         If you can't find the server log, you should be able to use the SmartClientLog (above)
+         which is visible in the Developer Console under "Server Logs" and as a standalone log
+         viewer in /tools/serverLogViewer.jsp.  
+         
+         Failing all of the above, you can switch the appender-ref value for the com.isomorphic
+         category to use the FILE_LOG appender which will log to /smartClientServerLog.txt on
+         UNIX and C:\smartClientServerLog.txt on Windows.  You can change this by modifying the
+         value of the "File" param in the FILE_LOG definition above.
+    -->
+  	<category name="com.isomorphic">
+	  <priority value="INFO" />
+      <appender-ref ref="STDOUT"/>
+      <!-- <appender-ref ref="SmartClientLog"/>  -->
+	</category>
+
+	<category name="com.isomorphic.base.Reflection">
+	  <priority value="INFO" />
+	</category>
+	
+	<category name="com.isomorphic.base.ISCInit">
+	  <priority value="INFO" />
+	</category>
+	
+	<category name="com.isomorphic.base.ConfigLoader">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.download.Download">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.sql.ValueSet">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.servlet.RequestContext">
+	  <priority value="WARN" />
+	</category>
+
+	<category name="com.isomorphic.datasource.DataSource">
+	  <priority value="INFO" />
+	</category>
+	
+	<category name="com.isomorphic.sql.SQLDataSource">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.datasource.BasicDataSource">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.validation.Validation">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.store.DataStructCache">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.assembly.FileAssembler">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.obfuscation.Obfuscator">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.servlet.PreCache">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.timing.Timing">
+	  <priority value="INFO" />
+	</category>
+    
+   	<category name="com.isomorphic.resultData.ResultData">
+      <priority value="INFO" />
+    </category>
+
+    <category name="com.isomorphic.js.JSSyntaxScannerFilter">
+      <priority value="INFO" />
+    </category>
+
+	<category name="com.isomorphic.interfaces.InterfaceProvider">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.isomorphic.compression.Compression">
+	  <priority value="WARN" />
+	</category>
+
+	<category name="com.isomorphic.servlet.ProxyHttpServletResponse">
+	  <priority value="INFO" />
+	</category>
+
+    <category name="com.isomorphic.naming.JNDI">
+      <priority value="WARN" />
+    </category>
+
+	<category name="org.apache.velocity">
+	  <priority value="WARN" />
+	</category>
+
+	<category name="org.hibernate.SQL">
+	  <priority value="WARN" />
+	</category>
+
+    <!-- shows values bound to params in SQL query, but produces a lot of output -->
+    <!--
+	<category name="org.hibernate.type">
+	  <priority value="DEBUG" />
+      <appender-ref ref="STDOUT"/>
+	</category>
+    -->
+
+	<!-- embedded tomcat -->
+	<category name="org.apache">
+	  <priority value="INFO" />
+      <appender-ref ref="STDOUT"/>
+      <!-- <appender-ref ref="SmartClientLog"/>  -->
+	</category>
+
+    <!-- hibernate log messages -->
+  	<category name="org.hibernate">
+	  <priority value="WARN" />
+      <appender-ref ref="STDOUT"/>
+      <!-- <appender-ref ref="SmartClientLog"/>  -->
+	</category>
+
+  	<!-- app log messages -->
+  	<category name="com.app">
+	  <priority value="INFO" />
+      <appender-ref ref="STDOUT"/>
+      <!-- <appender-ref ref="SmartClientLog"/>  -->
+	</category>
+	
+	<category name="com.app.server.SNMP">
+	  <priority value="INFO" />
+	</category>
+
+	<category name="com.app.server.ConfigDownload">
+	  <priority value="INFO" />
+	</category>
+	
+	<category name="com.app.server.PortsInfoRefresh">
+	  <priority value="INFO" />
+	</category>
+				
+	
+</log4j:configuration>
+

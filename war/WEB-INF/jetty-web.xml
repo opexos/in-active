@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+
+<Get name="securityHandler">
+    
+  <Set name="loginService">
+	<New class="org.eclipse.jetty.security.JDBCLoginService">
+	  <Set name="name">AppRealm</Set>
+	  <Set name="config">WEB-INF/realm.properties</Set>
+	</New>
+   </Set>
+   
+</Get>  
+
+<Set name="maxFormContentSize">2097152</Set>    
+
+</Configure>

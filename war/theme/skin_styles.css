@@ -1,0 +1,2956 @@
+/* ============================================================
+    "Simplicity" theme programmatic settings
+    Copyright 2003 and beyond, Isomorphic Software
+============================================================*/
+
+
+/*****************************************/
+/* color text */
+/*****************************************/
+.colortext {
+	font-family: Courier New, monospace;
+	font-size: 12px;
+	line-height: 15px;
+	white-space: pre;  
+}
+.colortext pre {
+	margin: 0px;
+}
+.colortext .red {
+	background-color: #ffaaaa;  
+}
+.colortext .green {
+	background-color: #aaffaa;  
+}
+.colortext .highlight {
+	background-color: #ffae00;  
+}
+
+/*****************************************/
+/* other */
+/*****************************************/
+.labelWithBottomBorder {
+	color: black;
+	font-family: arial,tahoma, Arial, Verdana, sans-serif;
+	font-size: 12px;
+	border-bottom: 1px solid silver;
+}
+
+.console {
+	font-family: Courier New, monospace;
+	color: white;
+	background-color: black;
+	font-size: 12px;
+}
+
+.console .cursor {
+	color: black;
+	background-color: lime;
+}
+
+.textItemOF,
+.textItemOFFocused,
+.textItemOFDisabled {
+    background:#FFFFFF;
+    padding:2px;	
+	color: black;
+	font-family: arial,tahoma, Arial, Verdana, sans-serif;
+	font-size: 12px;	
+	overflow: hidden;
+    border-top:1px solid #abadb3;
+    border-left:1px solid #dbdfe5;
+    border-right:1px solid #dbdfe5;
+    border-bottom:1px solid #dbdfe5;
+}
+
+.textItemOFFocused {
+	color: black;
+	border-top:1px solid #5678ac;
+    border-left:1px solid #bccde6;
+	border-right:1px solid #afc6e2;
+	border-bottom:1px solid #c0d7ec;
+}
+
+.textItemOFDisabled {
+	color:#ACA899;
+}
+
+
+.fixedWidth,
+.fixedWidthFocused,
+.fixedWidthDisabled {
+	color: black;
+	font-family: Courier New, monospace;
+	font-size: 12px;
+}
+
+A:link, 
+A:visited,
+A:active,
+A:hover { 
+	text-decoration: underline; 
+	color: navy;
+} 
+
+/*html,body {
+    background: url(b2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;    
+    -o-background-size: cover;      
+    background-size: cover;         
+}*/
+
+.topBackground {
+	background: url(images/b4.jpg);
+	background-size: cover;	
+}
+
+
+/*============================================================
+General
+============================================================*/
+
+ol,
+ul {
+    -webkit-text-size-adjust: 100%;
+}
+
+pre {
+	font-family: Courier New, monospace; 
+    font-size: 12px;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+.pageBackground {
+    font-family:arial,tahoma,Arial,Verdana,sans-serif; 
+    font-size: 12px;
+    color:#333333;
+    background:#FAFAFA;
+}
+
+/* default text */
+.normal,
+.normalFocused {
+    font-family:arial,tahoma,Verdana,sans-serif; 
+    font-size: 12px;
+}
+
+.defaultBorder {
+    border:1px solid #A7ABB4;
+}
+
+/* drag outline */
+.dragOutline {
+    border:1px solid #0060BF;
+}
+
+/* drop indicator */
+.dropBorder {
+    background-color:#808080;
+}
+
+
+/* hover canvas  */
+.canvasHover,
+.gridHover,
+.formHover {
+    font-family:arial,tahoma,verdana,sans-serif;
+    font-size: 12px;
+    color: #fff;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;    
+    border-radius: 4px;*/
+    background-color: #595959;
+    border: 1px solid #999;
+    padding: 5px;
+    /*opacity: 0.9;*/
+}
+
+/* group label */
+.groupLabel {
+    font-family:arial,tahoma,Verdana,sans-serif; 
+    font-size: 12px;
+    color:#333333;
+    padding-left:5px; padding-right:5px;
+}
+
+.richTextEditor p {
+   margin-top:0px; margin-bottom:0px;
+}
+
+/*============================================================
+Button (also used as MenuButton base style)
+============================================================*/
+
+.button,
+.buttonOver,
+.buttonDown,
+.buttonDisabled,
+.buttonSelected,
+.buttonSelectedDown,
+.buttonSelectedOver,
+.buttonSelectedDisabled {
+    font-family:arial,tahoma,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+    padding: 5px;
+    border: 1px solid #868686;
+    background: #f6f6f6;
+    background-image: -moz-linear-gradient(top, #ffffff, #efefef);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    /*-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.buttonOver {
+    border-color: #777777;
+    background: #f3f3f3;
+    background-image: -moz-linear-gradient(top, #ffffff, #ebebeb);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));
+    outline: 0;
+    box-shadow: 0 0 3px #999;
+
+}
+
+.buttonDown {
+    background-color:#e7e7e7;
+    border-color: #534d4e #716e6e #716e6e #534d4e;
+    background-image: -moz-linear-gradient(top, #cccccc, #ffffff);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff));
+}
+
+.buttonDisabled {
+    color: #999999;
+    border-color: #C3C3C3;
+    background: #ddd;
+    background-image: -moz-linear-gradient(top, #cccccc, #ffffff);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff));
+}
+
+.buttonSelected,
+.buttonSelectedDown,
+.buttonSelectedOver,
+.buttonSelectedDisabled {
+    border-color: #999;
+    background: #ddd;
+    background-image: -moz-linear-gradient(top, #cccccc, #ffffff);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff));
+}
+
+.buttonSelectedOver {
+    border-color: #548ACA;
+    background: #ddd;
+    background-image: -moz-linear-gradient(top, #cccccc, #ffffff);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff));
+}
+
+.buttonSelectedDisabled {
+    font-size: 12px; color:#666666;
+}
+
+.headerButton,
+.headerButtonOver,
+.headerButtonDown,
+.headerButtonDisabled,
+.headerButtonSelected,
+.headerButtonSelectedDown,
+.headerButtonSelectedOver,
+.headerButtonSelectedDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    padding:2px;        
+}
+.headerButton,
+.headerButtonSelected {
+    border-left:1px solid white; border-top:1px solid white;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+    background:#E7E7E7;
+    background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0.25, rgb(231,231,231)), color-stop(0.63, rgb(244,244,244)),color-stop(0.82, rgb(252,252,252)));
+    background-image : -moz-linear-gradient(center bottom, rgb(231,231,231) 25%, rgb(244,244,244) 63%, rgb(252,252,252) 82%);
+}
+
+.headerButtonOver,
+.headerButtonSelectedOver {
+    border-left:1px solid white; border-top:1px solid white;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;    
+    background:#dddddd;
+    background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0.1, rgb(211,211,211)), color-stop(0.71, rgb(242,242,242)), color-stop(0.77, rgb(252,252,252)));
+    background-image :-moz-linear-gradient(center bottom, rgb(211,211,211) 10%, rgb(242,242,242) 71%, rgb(252,252,252) 77%);
+}
+
+.headerButtonDown,
+.headerButtonSelectedDown {
+    border-left:1px solid white;
+    border-top:1px solid white;
+    border-right:1px solid #808080;
+    border-bottom:1px solid #808080;    
+    background:#d5d5d5;
+    background-image : -webkit-gradient(linear, left bottom, left top, color-stop(0.1, rgb(84,137,202)), color-stop(0.55, rgb(108,150,202)), color-stop(0.77, rgb(132,164,202)));
+    background-image : -moz-linear-gradient(center bottom, rgb(84,137,202) 10%, rgb(108,150,202) 55%, rgb(132,164,202) 77%);
+}
+
+.headerButtonDisabled,
+.headerButtonSelectedDisabled {
+    color:#666666;
+    border-left:1px solid #CCCCCC; border-top:1px solid #CCCCCC;	
+    border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;
+    background:#C3C3C3;
+}
+
+/*.headerButtonSelected,
+.headerButtonSelectedDown,
+.headerButtonSelectedOver,
+.headerButtonSelectedDisabled {
+    color:white;
+    border-bottom:1px solid #4d76b8;
+    background: #7abcff;
+    background-image: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee));
+
+}
+
+.headerButtonSelectedOver {
+    color:white;
+    background: #7abcff;
+    background-image: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* firefox */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee));
+}*/
+
+.headerButtonSelectedDisabled {
+    font-size: 12px; color:#666666;
+}
+
+/* ImgButton */
+.imgButton,
+.imgButtonOver,
+.imgButtonSelected,
+.imgButtonSelectedDisabled,
+.imgButtonSelectedOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+.imgButtonDown,
+.imgButtonSelectedDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+.imgButtonDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#666666;
+}
+
+/* StretchImgButton */
+.stretchImgButton,
+.stretchImgButtonSelected,
+.stretchImgButtonSelectedOver,
+.stretchImgButtonOver,
+.stretchImgButtonDown,
+.stretchImgButtonSelectedDown,
+.stretchImgButtonSelectedDisabled,
+.stretchImgButtonDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+.stretchImgButtonSelectedDisabled,
+.stretchImgButtonDisabled {
+    color:#666666;
+}
+
+/*============================================================
+  Menus
+============================================================*/
+
+.menuBorder {
+    /*border:1px solid #aaaaaa;*/
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 15px;    
+    /*border-radius: 3px;*/
+    background-color: #fafafa;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.menu,
+.menuDark,
+.menuSelected,
+.menuSelectedDark,
+.menuOver,
+.menuOverDark,
+.menuSelectedOver,
+.menuSelectedOverDark,
+.menuDisabled,
+.treeMenuSelected,
+.treeMenuSelectedOver {
+    /*border-top:1px solid white;
+    border-bottom:1px solid white;*/
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; 
+    font-size: 12px; 
+    background-color: #fafafa;
+    padding-left: 10px;
+}
+.menuOver,
+.menuOverDark,
+.menuSelectedOver,
+.menuSelectedOverDark {
+    color:white;
+    text-shadow: 0px 0px 4px #003168; 
+    background-color: #1A3880;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.55, #1D3B84), color-stop(0.77, #1361A1));	
+    background-image: -moz-linear-gradient(center bottom, #1D3B84 55%, #1361A1 77%);    
+}
+
+.treeMenuSelected {
+    background-color:#CAE4FF;
+    border-top:1px solid #CAE4FF;
+    border-bottom:1px solid #CAE4FF;
+}
+
+.treeMenuSelectedOver {
+    color:white; background-color:#0A246A;
+    border-top:1px solid #0A246A;
+    border-bottom:1px solid #0A246A;
+}
+.menuDisabled {
+    color:#979797;
+    background-color:white;
+}   
+
+
+.windowBackground,
+.dialogBackground {
+    /*border:1px solid #aaaaaa;*/
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 15px;
+    /*border-radius: 3px;*/
+    background-color: #1A3880;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.55, #1D3B84), color-stop(0.77, #1361A1));	
+    background-image: -moz-linear-gradient(center bottom, #1D3B84 55%, #1361A1 77%);
+    background-size: 100% 28px;
+    background-repeat: no-repeat;
+}
+
+.windowBody,
+.dialogBody,
+.promptBody {
+	margin-top:2px;
+}
+
+.windowHeader,
+.windowHeaderHilite,
+.dialogHeader,
+.dialogHeaderHilite {
+	/*   background-color: #1A3880;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.55, #1D3B84), color-stop(0.77, #1361A1));	
+    background-image: -moz-linear-gradient(center bottom, #1D3B84 55%, #1361A1 77%);*/    
+}
+
+.windowHeaderHilite,
+.dialogHeaderHilite {
+}
+.windowHeaderText,
+.dialogHeaderText,
+.dialogStatusBarText {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    color: white;
+    padding-left:0px;
+    padding-right:5px;
+    text-shadow: 0px 0px 4px #003168;
+}
+.windowStatusBar,
+.dialogStatusBar {
+    font-family:arial,tahoma,Arial,Verdana,sans-serif; 
+    font-size: 12px; 
+    color:black;
+    border-top: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+.windowStatusBar {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+.modalMask {
+    background-color:black;
+}
+
+
+
+/*============================================================
+  Layout
+============================================================*/
+
+.layoutDropLine {
+    background-color:#DDDDFF;
+}
+.layoutPlaceHolder {
+    border:1px solid black;
+}
+
+.splitbar {
+    background-color:#FFFFFF;
+}
+.splitbarDown {
+	border:1px solid #C0C0C0;
+    background-color:#FFFFFF;
+}
+
+/*============================================================
+  TabSet and tab titles
+============================================================*/
+
+.tabSetContainer {
+    font-family:arial,tahoma,Arial,Verdana,sans-serif; font-size: 12px;    
+/*    border: 1px solid #C0C3C7;
+    background-color:#FFFFFF*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tabBarTop {
+    padding-top:2px;
+}
+
+.tabBarLeft {
+    padding-left:2px;
+}
+
+.tabBarRight {
+    padding-right:2px;
+}
+
+.tabBarBottom {
+    padding-bottom:2px;
+}
+
+.tab,
+.tabOver,
+.tabSelected,
+.tabSelectedOver,
+.tabDown,
+.tabSelectedDown,
+.tabSelectedDisabled,
+.tabDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size: 12px;
+}
+.tabSelectedDisabled,
+.tabDisabled {
+    color:#666666;
+}
+
+.tabTitle,
+.tabTitleDown,
+.tabTitleOver,
+.tabTitleDisabled,
+.tabTitleSelected,
+.tabTitleSelectedDown,
+.tabTitleSelectedOver,
+.tabTitleSelectedDisabled,
+.vtabTitle,
+.vtabTitleSelected,
+.vtabTitleOver,
+.vtabTitleDown,
+.vtabTitleSelectedOver,
+.vtabTitleSelectedDown,
+.vtabTitleDisabled,
+.vtabTitleSelectedDisabled {
+    color: #29333c;
+    font-family:arial,tahoma,Arial,Verdana,sans-serif; font-size: 12px;
+    padding-bottom:4px;
+}
+.tabTitleOver,
+.vtabTitleOver {
+    color:#29333c;
+}
+
+.tabTitleSelected,
+.vtabTitleSelected {
+	color:#FFF;
+    padding-bottom:4px;
+}
+
+.tabTitleSelectedOver,
+.vtabTitleSelectedOver {
+	color:#353f46;
+    padding-bottom:4px;
+}
+
+.tabTitleDisabled,
+.tabTitleSelectedDisabled,
+.vtabTitleDisabled,
+.vtabTitleSelectedDisabled {
+    color: #AAAAAA;
+    padding-bottom:2px;
+}
+
+/*============================================================
+  SectionStack
+============================================================*/
+
+.sectionStack {
+    border-left:1px solid #A6ABB4;
+    border-right:1px solid #A6ABB4;
+    border-bottom:1px solid #A6ABB4;
+}
+
+/* SectionStack headers - css based */
+.sectionHeaderopened, 
+.sectionHeaderclosed,
+.sectionHeaderDisabledopened,
+.sectionHeaderDisabledclosed {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    padding-left:3px;
+    border-bottom:1px solid white;
+    border-top:1px solid #808080;
+    color: #ffffff;
+    background-color:#005cb8;
+}
+
+.sectionHeaderopened,
+.sectionHeaderDisabledopened {
+    border-bottom:1px solid #808080;
+}
+
+.sectionHeaderDisabledopened,
+.sectionHeaderDisabledclosed {
+	color:#c8c8c8;
+}
+
+.navToolbar {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    border-top: 1px solid #004285;
+    border-bottom: 1px solid #004285;
+    color: #005cb8;
+    background-color: #ffffff;
+}
+
+.navBarHeader,
+.navButton,
+.navButtonOver,
+.navButtonFocused,
+.navButtonFocusedOver,
+.navButtonDown,
+.navButtonFocusedDown,
+.navButtonSelected,
+.navButtonSelectedFocused,
+.navButtonSelectedDown,
+.navButtonSelectedFocusedDown,
+.navButtonSelectedOver,
+.navButtonSelectedFocusedOver,
+.navButtonDisabled,
+.navButtonSelectedDisabled,
+.navBackButton,
+.navBackButtonOver,
+.navBackButtonFocused,
+.navBackButtonFocusedOver,
+.navBackButtonDown,
+.navBackButtonFocusedDown,
+.navBackButtonSelected,
+.navBackButtonSelectedFocused,
+.navBackButtonSelectedDown,
+.navBackButtonSelectedFocusedDown,
+.navBackButtonSelectedOver,
+.navBackButtonSelectedFocusedOver,
+.navBackButtonDisabled,
+.navBackButtonSelectedDisabled,
+.navForwardButton,
+.navForwardButtonOver,
+.navForwardButtonFocused,
+.navForwardButtonFocusedOver,
+.navForwardButtonDown,
+.navForwardButtonFocusedDown,
+.navForwardButtonSelected,
+.navForwardButtonSelectedFocused,
+.navForwardButtonSelectedDown,
+.navForwardButtonSelectedFocusedDown,
+.navForwardButtonSelectedOver,
+.navForwardButtonSelectedFocusedOver,
+.navForwardButtonDisabled,
+.navForwardButtonSelectedDisabled {
+    padding: 0px 10px 0px 10px !important; /* !important to override the cellpadding attribute */
+    font-family:arial,tahoma, Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    line-height: 23px;
+}
+
+.navButtonDown,
+.navButtonFocusedDown,
+.navButtonSelectedDown,
+.navButtonSelectedFocusedDown,
+.navBackButtonDown,
+.navBackButtonFocusedDown,
+.navBackButtonSelectedDown,
+.navBackButtonSelectedFocusedDown,
+.navForwardButtonDown,
+.navForwardButtonFocusedDown,
+.navForwardButtonSelectedDown,
+.navForwardButtonSelectedFocusedDown {
+    /* no Down styling */
+}
+
+.navBarHeader {
+    font-weight: bold;
+}
+
+.navBackButton,
+.navBackButtonOver,
+.navBackButtonFocused,
+.navBackButtonFocusedOver,
+.navBackButtonDown,
+.navBackButtonFocusedDown,
+.navBackButtonSelected,
+.navBackButtonSelectedFocused,
+.navBackButtonSelectedDown,
+.navBackButtonSelectedFocusedDown,
+.navBackButtonSelectedOver,
+.navBackButtonSelectedFocusedOver,
+.navBackButtonDisabled,
+.navBackButtonSelectedDisabled {
+    padding-left: 7px !important;
+    padding-right: 5px !important;
+}
+
+.navForwardButton,
+.navForwardButtonOver,
+.navForwardButtonFocused,
+.navForwardButtonFocusedOver,
+.navForwardButtonDown,
+.navForwardButtonFocusedDown,
+.navForwardButtonSelected,
+.navForwardButtonSelectedFocused,
+.navForwardButtonSelectedDown,
+.navForwardButtonSelectedFocusedDown,
+.navForwardButtonSelectedOver,
+.navForwardButtonSelectedFocusedOver,
+.navForwardButtonDisabled,
+.navForwardButtonSelectedDisabled {
+    padding-left: 5px !important;
+    padding-right: 10px !important;
+}
+
+/*============================================================
+  Forms
+============================================================*/
+
+/* general form styles */
+.formRow {}
+.formCell,
+.formCellFocused,
+.formCellDisabled,
+.nestedFormContainer,
+.nestedFormContainerFocused,
+.nestedFormContainerDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+}
+.formTitle,
+.formTitleFocused,
+.formTitleDisabled,
+.formCellError,
+.formTitleError,
+.formHint,
+.formHintDisabled,
+.headerItem,
+.headerItemDisabled,
+.headerItemError,
+.staticTextItem,
+.staticTextItemDisabled,
+.staticTextItemError,
+.textItem,
+.textItemFocused,
+.textItemDisabled,
+.textItemDisabledHint,
+.textItemError,
+.textItemHint,
+.uploadItem,
+.uploadItemFocused,
+.uploadItemDisabled,
+.uploadItemDisabledHint,
+.uploadItemError,
+.uploadItemHint,
+.selectItemControl,
+.selectItemControlError,
+.selectItemControlFocused,
+.selectItemText,
+.selectItemTextError,
+.selectItemTextDisabled,
+.selectItemTextFocused,
+.selectItemTextHint,
+.selectItemTextDisabledHint,
+.comboBoxItem,
+.comboBoxItemFocused,
+.comboBoxItemError,
+.comboBoxItemDisabled ,
+.comboBoxItemPendingText,
+.pickListCell,
+.pickListCellSelected,
+.pickListCellDisabled,
+.pickListCellDark,
+.pickListCellSelectedDark,
+.pickListCellDisabledDark,
+.tallPickListCell,
+.tallPickListCellSelected,
+.tallPickListCellDisabled,
+.tallPickListCellDark,
+.tallPickListCellSelectedDark,
+.tallPickListCellDisabledDark,
+.labelAnchor,
+.labelAnchorDisabled,
+.labelAnchorError,
+.labelAnchorFocused {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; 
+    font-size: 12px;
+}
+
+.formTitle,
+.formTitleFocused  {
+    color:#003168;
+}
+
+.formCellError,
+.formTitleError {
+    font-weight:bold; color:#204268;
+}
+.formHint,
+.formHintDisabled {
+    color:#455668; padding:3px;
+}
+
+/* headerItem */
+.headerItem,
+.headerItemDisabled,
+.headerItemError {
+    font-size: 12px; font-weight:bold; color:#3E74B3;
+}	
+
+/* text items */
+.textItem,
+.textItemFocused,
+.textItemDisabled,
+.textItemDisabledHint,
+.textItemError,
+.textItemHint,
+.selectItemText,
+.selectItemTextError,
+.selectItemTextFocused,
+.selectItemTextDisabled,
+.selectItemTextHint,
+.selectItemTextDisabledHint,
+.comboBoxItemPendingText {
+    background:#FFFFFF;
+    padding:2px;
+    border:1px solid #bfbfbf;
+}
+.uploadItem,
+.uploadItemFocused,
+.uploadItemDisabled,
+.uploadItemDisabledHint,
+.uploadItemError,
+.uploadItemHint {
+    margin:0;
+    border:0;
+    padding:0;
+    background:#FFFFFF;
+}
+.selectItemText,
+.selectItemTextError,
+.selectItemTextFocused,
+.selectItemTextDisabled,
+.selectItemTextHint,
+.selectItemTextDisabledHint,
+.comboBoxItemPendingText {
+    border-right: 0;
+}
+.textItemDisabled,
+.textItemDisabledHint,
+.uploadItemDisabled,
+.uploadItemDisabledHint,
+.selectItemTextDisabled,
+.selectItemTextDisabledHint,
+.pickerSearchBoxDisabled,
+.pickerSearchBoxDisabledHint,
+.staticTextItemDisabled {
+    color:#ACA899;
+}
+
+.textItemHint,
+.uploadItemHint,
+.selectItemTextHint {
+    color:darkGray;
+}
+
+.textItem,
+.selectItemText {
+    border-top:1px solid #abadb3;
+    border-left:1px solid #dbdfe5;
+    border-right:1px solid #dbdfe5;
+    border-bottom:1px solid #dbdfe5;
+}
+
+.comboBoxItemPendingText {
+    color:#0066CC;
+}
+
+/* selectItem */
+.selectItemTextFocused {
+    color:black;
+    -moz-outline-offset:-1;
+    border:1px solid #5678ac;
+}
+
+.textItemFocused,
+.selectItemTextFocused {
+    color:black;
+    -moz-outline-offset:-1;
+	border-top:1px solid #5678ac;
+    border-left:1px solid #bccde6;
+	border-right:1px solid #afc6e2;
+	border-bottom:1px solid #c0d7ec;
+}
+
+.selectItemText,
+.selectItemTextError,
+.selectItemTextFocused,
+.selectItemTextDisabled,
+.selectItemTextHint,
+.selectItemTextDisabledHint {
+    border-right:0px none;
+}
+
+.selectItemPickerIcon,
+.selectItemPickerIconFocused,
+.selectItemPickerIconDisabled,
+.selectItemPickerIconError {
+    padding:0px;
+}
+
+.pickListMenuBody {
+    border:1px solid #BBBBBB;
+}
+
+.pickListCell,
+.pickListCellDark,
+.tallPickListCell,
+.tallPickListCellDark {
+	color:black; background-color:#FFFFFF;
+}
+.pickListCellSelected,
+.pickListCellSelectedDark {
+    color:white;
+    background-color:#316AC5;
+}
+.tallPickListCellSelected,
+.tallPickListCellSelectedDark {
+    color:black;
+    background:#B2DFEE;
+}
+.pickListCellDisabled,
+.tallPickListCellDisabled,
+.pickListCellDisabledDark,
+.tallPickListCellDisabledDark {
+	color:#595959;
+	background-color:#C0C0C0;
+}
+
+.pickListCellOver,
+.pickListCellSelectedOver,
+.pickListCellOverDark,
+.pickListCellSelectedOverDark,
+.tallPickListCellOver,
+.tallPickListCellSelectedOver,
+.tallPickListCellOverDark,
+.tallPickListCellSelectedOverDark {
+  background-color: #316AC5;
+  color: #fff;
+  font-family:arial,tahoma, Verdana,Bitstream Vera Sans,sans-serif;
+  font-size: 12px;
+}
+
+/* checkbox and radioButton */
+.labelAnchor,
+.labelAnchorDisabled,
+.labelAnchorError,
+.labelAnchorFocused  {
+    text-decoration:none;
+}
+
+/* FilterBuilder */
+.bracketBorders {
+    border-left: 1px solid #808080;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;    
+}
+
+/* ColorChooser */
+.colorChooserCell {
+    background-color:#EFEFEF;
+    border-left:1px solid #EFEFEF;
+    border-top:1px solid #EFEFEF;
+    border-right:1px solid #EFEFEF;
+    border-bottom:1px solid #EFEFEF;
+}
+.colorChooserCellOver {
+    background-color:#EFEFEF; 
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+}
+
+/*============================================================
+     DateChooser
+============================================================*/
+
+/* Defaults for all days and controls */
+.dateChooserButton,
+.dateChooserButtonOver,
+.dateChooserButtonDown,
+.dateChooserButtonDisabled,
+.dateChooserButtonSelected,
+.dateChooserButtonSelectedDown,
+.dateChooserButtonSelectedOver,
+.dateChooserButtonSelectedDisabled,
+.dateChooserWeekendButton,
+.dateChooserWeekendButtonOver,
+.dateChooserWeekendButtonDown,
+.dateChooserWeekendButtonDisabled,
+.dateChooserWeekendButtonSelected,
+.dateChooserWeekendButtonSelectedDown,
+.dateChooserWeekendButtonSelectedOver,
+.dateChooserWeekendButtonSelectedDisabled,
+.dateChooserBottomButton,
+.dateChooserBottomButtonOver,
+.dateChooserBottomButtonDown,
+.dateChooserBottomButtonSelected,
+.dateChooserBottomButtonSelectedOver,
+.dateChooserBottomButtonSelectedDown,
+.dateChooserNavButton,
+.dateChooserNavButtonOver,
+.dateChooserNavButtonDown,
+.dateChooserNavButtonSelected,
+.dateChooserNavButtonSelectedOver,
+.dateChooserNavButtonSelectedDown,
+.dateChooserWeekday,
+.dateChooserWeekdayOver,
+.dateChooserWeekdayDown,
+.dateChooserWeekdaySelected,
+.dateChooserWeekdaySelectedOver,
+.dateChooserWeekdaySelectedDown,
+.dateChooserWeekdayDisabled,
+.dateChooserWeekend,
+.dateChooserWeekendOver,
+.dateChooserWeekendDown,
+.dateChooserWeekendSelected,
+.dateChooserWeekendSelectedOver,
+.dateChooserWeekendSelectedDown,
+.dateChooserWeekendSelectedDisabled,
+.dateChooserWeekendDisabled,
+.dateChooserDisabledWeekday,
+.dateChooserDisabledWeekdayOver,
+.dateChooserDisabledWeekdayDown,
+.dateChooserDisabledWeekdaySelected,
+.dateChooserDisabledWeekdaySelectedDown,
+.dateChooserDisabledWeekdaySelectedOver,
+.dateChooserDisabledWeekend,
+.dateChooserDisabledWeekendOver,
+.dateChooserDisabledWeekendDown,
+.dateChooserDisabledWeekendSelected,
+.dateChooserDisabledWeekendSelectedDown,
+.dateChooserDisabledWeekendSelectedOver,
+.dateChooserSelectedWeek,
+.dateChooserSelectedWeekOver,
+.dateChooserSelectedWeekDown,
+.dateChooserSelectedWeekDisabled,
+.dateChooserSelectedWeekSelected,
+.dateChooserSelectedWeekSelectedDown,
+.dateChooserSelectedWeekSelectedOver,
+.dateChooserSelectedWeekSelectedDisabled,
+.dateChooserFiscalYearCell,
+.dateChooserFiscalYearCellOver,
+.dateChooserFiscalYearCellDown,
+.dateChooserFiscalYearCellDisabled,
+.dateChooserFiscalYearCellSelected,
+.dateChooserFiscalYearCellSelectedDown,
+.dateChooserFiscalYearCellSelectedOver,
+.dateChooserFiscalYearCellSelectedDisabled,
+.dateChooserWeekCell,
+.dateChooserWeekCellOver,
+.dateChooserWeekCellDown,
+.dateChooserWeekCellDisabled,
+.dateChooserWeekCellSelected,
+.dateChooserWeekCellSelectedDown,
+.dateChooserWeekCellSelectedOver,
+.dateChooserWeekCellSelectedDisabled {
+    font-family:arial,tahoma,Arial,Verdana,sans-serif; font-size: 12px;
+    background-color:#FFFFFF;
+    border:2px solid white;
+    color:#868686;
+}
+
+/* year/month buttons */
+.dateChooserNavButton,
+.dateChooserNavButtonOver,
+.dateChooserNavButtonDown,
+.dateChooserNavButtonSelected,
+.dateChooserNavButtonSelectedOver,
+.dateChooserNavButtonSelectedDown {
+    padding:0px;
+    border-top:0px none;
+    border-bottom:1px solid #868686;
+}
+
+/* for all buttons, plus weekday headers (dateChooserButton) */
+.dateChooserButton,
+.dateChooserButtonOver,
+.dateChooserButtonDown,
+.dateChooserButtonSelected,
+.dateChooserButtonSelectedOver,
+.dateChooserButtonSelectedDown,
+.dateChooserWeekendButton,
+.dateChooserWeekendButtonOver,
+.dateChooserWeekendButtonDown,
+.dateChooserWeekendButtonSelected,
+.dateChooserWeekendButtonSelectedOver,
+.dateChooserWeekendButtonSelectedDown,
+.dateChooserNavButton,
+.dateChooserNavButtonOver,
+.dateChooserNavButtonDown,
+.dateChooserNavButtonSelected,
+.dateChooserNavButtonSelectedOver,
+.dateChooserNavButtonSelectedDown {
+    font-weight:bold;
+	color:#4C4C4C;
+}
+
+.dateChooserButtonOver,
+.dateChooserButtonDown {
+	cursor:pointer;
+	color:#467DCD;
+}
+
+.dateChooserWeekendButton,
+.dateChooserWeekendButtonOver,
+.dateChooserWeekendButtonDown,
+.dateChooserWeekendButtonSelected,
+.dateChooserWeekendButtonSelectedOver,
+.dateChooserWeekendButtonSelectedDown {
+    background-color:#CAE4FF;
+    border:2px solid #CAE4FF;
+}
+
+.dateChooserNavButton,
+.dateChooserNavButtonOver,
+.dateChooserNavButtonDown,
+.dateChooserNavButtonSelected,
+.dateChooserNavButtonSelectedOver,
+.dateChooserNavButtonSelectedDown {
+    cursor:pointer;
+    padding:2px;
+}
+
+.dateChooserNavButtonOver,
+.dateChooserNavButtonDown {
+    color:#467DCD;
+}
+
+/* Today, Cancel buttons */
+.dateChooserBottomButton,
+.dateChooserBottomButtonOver,
+.dateChooserBottomButtonDown {
+    cursor:pointer;
+    font-weight:bold;
+	color:#4C4C4C;
+    border-left:1px solid #ACB1B9;
+    border-top:1px solid #ACB1B9;
+}
+.dateChooserBottomButtonOver {
+    color:#467DCD;
+}
+
+
+/* weekday and weekend cells */
+.dateChooserWeekday,
+.dateChooserWeekdayOver,
+.dateChooserWeekdayDown,
+.dateChooserWeekdaySelected,
+.dateChooserWeekdaySelectedOver,
+.dateChooserWeekdaySelectedDown,
+.dateChooserWeekdayDisabled,
+.dateChooserWeekend,
+.dateChooserWeekendOver,
+.dateChooserWeekendDown,
+.dateChooserWeekendSelected,
+.dateChooserWeekendSelectedOver,
+.dateChooserWeekendSelectedDown,
+.dateChooserWeekendDisabled {
+    cursor:pointer;
+    color:black;
+    border:2px solid white;
+    background-color:white;
+}
+
+.dateChooserDisabledWeekday,
+.dateChooserDisabledWeekdayOver,
+.dateChooserWeekdayDisabled,
+.dateChooserWeekendDisabled {
+    background-color:white;
+	color:#C0C3CA;
+}
+
+.dateChooserWeekend,
+.dateChooserWeekendOver,
+.dateChooserWeekendSelected,
+.dateChooserWeekendSelectedDisabled,
+.dateChooserWeekendDisabled,
+.dateChooserDisabledWeekend,
+.dateChooserDisabledWeekendOver,
+.dateChooserDisabledWeekendDown  {
+    border:2px solid #CAE4FF;
+    background-color:#CAE4FF;
+}
+
+.dateChooserWeekdayOver,
+.dateChooserWeekendOver {
+	border:2px solid #CAE4FF;
+}
+
+/* selected/over date-cell styling */
+.dateChooserWeekdaySelected,
+.dateChooserWeekdaySelectedOver,
+.dateChooserWeekdayDown,
+.dateChooserWeekdaySelectedDown,
+.dateChooserWeekendSelected,
+.dateChooserWeekendSelectedOver,
+.dateChooserWeekendDown,
+.dateChooserWeekendSelectedDown ,
+/* disabled selected/over date-cells */
+.dateChooserDisabledWeekdayDown,
+.dateChooserDisabledWeekdaySelected,
+.dateChooserDisabledWeekdaySelectedDown,
+.dateChooserDisabledWeekdaySelectedOver,
+.dateChooserDisabledWeekendDown,
+.dateChooserDisabledWeekendSelected,
+.dateChooserDisabledWeekendSelectedOver,
+.dateChooserDisabledWeekendSelectedDown {
+	font-weight:bold;
+	color:#4C4C4C;
+    border:2px solid #ffdd2e;
+    background-color:#ffdd2e;
+}
+
+.dateChooserWeekdayDown,
+.dateChooserWeekendDown {
+	font-weight:normal;
+}
+
+/* year and month pop-up menus */
+.dateChooserYearMenu,
+.dateChooserMonthMenu,
+.dateChooserWeekMenu {
+    background-color:#FFFFFF;    
+}
+
+/*============================================================
+  Slider & Rangebar
+============================================================*/
+
+/* slider and rangebar labels */
+.sliderTitle,
+.sliderRange,
+.sliderRangeDisabled,
+.sliderValue,
+.sliderValueDisabled,
+.rangebarTitle,
+.rangebarRange,
+.rangebarValue {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+.sliderRangeDisabled,
+.sliderValueDisabled {
+    color:#ACA899;
+}
+.sliderTitle,
+.rangebarTitle {
+    font-weight:bold;
+}
+.sliderRange,
+.rangebarRange {
+    color:gray;
+}
+
+/*============================================================
+  DetailViewer
+============================================================*/
+.detailBlock {
+    border-left:1px solid gray;
+    border-top:1px solid gray;
+}
+
+.detail,
+.detailLabel,
+.detailHeader {
+    border-right:1px solid gray;
+    border-bottom:1px solid gray;
+}
+
+.detail,
+.detailLabel,
+.detailHeader {
+    font-family:arial,tahoma,Bitstream Vera Sans, sans-serif; font-size: 12px; background-color:white;
+}
+
+.detailLabel {
+    font-weight:bold;
+    background-color:#EEEEEE;
+    text-align:right;
+}
+
+.detailHeader {
+    font-size: 12px; font-weight:bold;
+    background-color:#BBDAFA;
+}
+
+/*============================================================
+  ListGrid
+============================================================*/
+
+/*============================================================
+	ListGrid parts
+		styleName - listGrid
+		headerBarStyle - headerBar
+		bodyStyleName - gridBody
+============================================================*/
+
+.listGrid {
+    border: 1px solid #aaaaaa;
+}
+.loadingDataMessage,
+.offlineMessage,
+.emptyMessage {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; padding:10px;
+}
+.gridDragTracker {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    background-color:white;
+    padding:1px;
+    border:1px dotted blue;
+}
+.dragLine {
+    border-top:2px dotted #548ACA;
+    pointer-events: none;
+}
+.dragLineVertical {
+    border-right:2px dotted #548ACA;
+    pointer-events: none;
+}
+
+.listTable {}
+/* for filterEditor */
+.recordEditorCell {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px; color:black;
+    background-color:#f4f4f4;
+}
+
+
+/*============================================================
+	ListGrid cells
+		listGrid.baseStyle
+============================================================*/
+
+/*------------------------------------------------------------
+		listGrid.baseStyle
+------------------------------------------------------------*/
+.cell,
+.cellDark,
+.cellOver,
+.cellOverDark,
+.cellSelected,
+.cellSelectedDark,
+.cellSelectedOver,
+.cellSelectedOverDark,
+.cellDisabled,
+.cellDisabledDark,
+.tallCell,
+.tallCellDark,
+.tallCellOver,
+.tallCellOverDark,
+.tallCellSelected,
+.tallCellSelectedDark,
+.tallCellSelectedOver,
+.tallCellSelectedOverDark,
+.tallCellDisabled,
+.tallCellDisabledDark,
+.groupSummaryCell,
+.groupSummaryCellDisabled,
+.gridSummaryCell,
+.gridSummaryCellDisabled,
+.recordSummaryCell,
+.recordSummaryCellDark,
+.recordSummaryCellOver,
+.recordSummaryCellOverDark,
+.recordSummaryCellSelected,
+.recordSummaryCellSelectedDark,
+.recordSummaryCellSelectedOver,
+.recordSummaryCellSelectedOverDark,
+.recordSummaryCellDisabled,
+.recordSummaryCellDisabledDark,
+.expansionCellCell,
+.expansionCellCellDark,
+.expansionCellCellOver,
+.expansionCellCellOverDark,
+.expansionCellCellSelected,
+.expansionCellCellSelectedDark,
+.expansionCellCellSelectedOver,
+.expansionCellCellSelectedOverDark,
+.expansionCellCellDisabled,
+.expansionCellCellDisabledDark,
+.specialCol,
+.specialColOver,
+.specialColSelected,
+.specialColSelectedOver,
+.specialColDisabled,
+.groupNode {
+	font-family:arial,tahoma,Arial,Verdana,sans-serif; font-size: 12px; text-overflow:ellipsis;
+	color:black;
+    border-bottom:1px solid;
+    border-bottom-color: #e2e2e2;
+}
+
+.specialCol {
+	font-family:arial,tahoma,Arial,Verdana,sans-serif; font-size: 12px; text-overflow:ellipsis;
+	color:black;
+    background-color:#f7f7f7;
+}
+
+.tallCell,
+.tallCellDark,
+.tallCellOver,
+.tallCellOverDark,
+.tallCellSelected,
+.tallCellSelectedDark,
+.tallCellSelectedOver,
+.tallCellSelectedOverDark,
+.tallCellDisabled,
+.tallCellDisabledDark {
+
+ }
+.cellDark,
+.recordSummaryCell,
+.recordSummaryCellDark {
+    background-color:#f7f7f7;
+}
+.groupSummaryCell,
+.groupSummaryCellDisabled,
+.gridSummaryCell,
+.gridSummaryCellDisabled {
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+    background-color:#ececec;
+}
+
+.gridSummaryCell,
+.gridSummaryCellDisabled {
+    border-top-width:0px;
+    border-bottom-width:0px;
+}
+
+.summaryRowBody {
+    background-color:#ececec;
+}
+
+.tallCellDark {
+	background-color:#f7f7f7;
+}
+.cellOver,
+.cellOverDark,
+.specialColOver,
+.recordSummaryCellOver,
+.recordSummaryCellOverDark {
+    background-color:#CAE4FF;
+}
+
+.tallCellOver,
+.tallCellOverDark {
+	background-color:#CAE4FF;
+}
+
+.cellSelected,
+.cellSelectedDark,
+.specialColSelected,
+.recordSummaryCellSelected,
+.recordSummaryCellSelectedDark {
+    background:#CAE4FF;
+}
+.tallCellSelected,
+.tallCellSelectedDark {
+    background:#CAE4FF;
+}
+.cellSelectedOver,
+.cellSelectedOverDark,
+.specialColSelectedOver,
+.recordSummaryCellSelectedOver,
+.recordSummaryCellSelectedOverDark {
+    background:#CAE4FF;
+}
+.tallCellSelectedOver,
+.tallCellSelectedOverDark {
+	background-color:#CAE4FF;
+}
+
+.groupSummaryCell, 
+.groupSummaryCellDisabled,
+.gridSummaryCell,
+.gridSummaryCellDisabled {
+    font-weight:bold;
+}
+
+.cellDisabled,
+.cellDisabledDark,
+.specialColDisabled,
+.tallCellDisabled,
+.tallCellDisabledDark,
+.groupSummaryCellDisabled,
+.gridSummaryCellDisabled,
+.specialColDisabled,
+.recordSummaryCellDisabled,
+.recordSummaryCellDisabledDark {
+	color:#AAAAAA;
+	background-color:#FFFFFF;
+}
+
+.groupNode {
+    font-weight:bold;
+    font-family:arial,tahoma,Tahoma,Verdana,sans-serif;
+	color:#3764a3;
+    border-bottom: 1px solid #8299b8;
+}
+
+/*Tree styling*/
+/*------------------------------------------------------------
+		treeGrid.baseStyle
+------------------------------------------------------------*/
+.treeCell,
+.treeCellDark,
+.treeCellOver,
+.treeCellOverDark,
+.treeCellSelected,
+.treeCellSelectedDark,
+.treeCellSelectedOver,
+.treeCellSelectedOverDark,
+.treeCellDisabled,
+.treeCellDisabledDark,
+.treeTallCell,
+.treeTallCellDark,
+.treeTallCellOver,
+.treeTallCellOverDark,
+.treeTallCellSelected,
+.treeTallCellSelectedDark,
+.treeTallCellSelectedOver,
+.treeTallCellSelectedOverDark,
+.treeTallCellDisabled,
+.treeTallCellDisabledDark {
+	font-family:arial,tahoma,Arial,Verdana,sans-serif; font-size: 12px; text-overflow:ellipsis;
+	color:black;
+}
+
+.treeTallCell,
+.treeTallCellDark,
+.treeTallCellOver,
+.treeTallCellOverDark,
+.treeTallCellSelected,
+.treeTallCellSelectedDark,
+.treeTallCellSelectedOver,
+.treeTallCellSelectedOverDark,
+.treeTallCellDisabled,
+.treeTallCellDisabledDark {
+
+ }
+
+.treeCellDark,
+.treeTallCellDark {
+	background-color:#f7f7f7;
+}
+.treeCellOver,
+.treeCellOverDark {
+    background:#CAE4FF;
+}
+.treeTallCellOver,
+.treeTallCellOverDark {
+	background-color:#CAE4FF;
+}
+.treeCellSelected,
+.treeCellSelectedDark {
+    background:#CAE4FF;
+
+}
+.treeTallCellSelected,
+.treeTallCellSelectedDark {
+	background-color:#CAE4FF;
+}
+.treeCellSelectedOver,
+.treeCellSelectedOverDark {
+    background:#CAE4FF;
+}
+.treeTallCellSelectedOver,
+.treeTallCellSelectedOverDark {
+	background-color:#CAE4FF;
+}
+
+
+.treeCellDisabled,
+.treeCellDisabledDark,
+.treeTallCellDisabled,
+.treeTallCellDisabledDark {
+	color:#AAAAAA;
+	background-color:#FFFFFF;
+}
+
+/* Field builders (Formula/Summary) */
+.sampleOutput {
+    border: 2px solid #D9D9D9;
+    padding: 3px;
+}
+
+/* Multi-sort - sort-index appearing next to sort-arrows in field headers */
+.sortNumeral {
+    font-size: 9px;
+}
+
+
+/*============================================================
+	12) ToolStrip
+============================================================*/
+.toolStrip {
+    border: 1px solid #868686;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    
+    background: #f6f6f6;
+    background-image: -moz-linear-gradient(top, #ffffff, #efefef);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+}
+
+.toolStripLayoutDropLine {
+    background-color:#404040;
+}
+
+.toolbarButton,
+.toolbarButtonOver,
+.toolbarButtonDown,
+.toolbarButtonDisabled,
+.toolbarButtonSelected,
+.toolbarButtonSelectedDown,
+.toolbarButtonSelectedOver,
+.toolbarButtonSelectedDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    padding:5px;
+    color:#000000;
+}
+
+.toolbarButton {
+}
+.toolbarButtonOver {
+    color:#0060BF;
+}
+.toolbarButtonDown {
+    color:#0060BF;
+}
+
+.toolbarButtonDisabled {
+    color:#CCCCCC;
+}
+.toolbarButtonSelected,
+.toolbarButtonSelectedDown,
+.toolbarButtonSelectedOver,
+.toolbarButtonSelectedDisabled {
+    font-size: 12px;
+    font-weight:bold;
+    color:#0060BF;
+}
+.toolbarButtonSelectedOver {
+
+}
+.toolbarButtonSelectedDisabled {
+    font-size: 12px;
+    color:#666666;
+}
+
+/*============================================================
+   12a) ToolStripGroup and IconButton
+==============================================================*/
+.toolStripGroup,
+.toolStripGroupOver,
+.toolStripGroupSelected,
+.toolStripGroupSelectedDisabled,
+.toolStripGroupSelectedOver,
+.toolStripGroupDown,
+.toolStripGroupSelectedDown,
+.toolStripGroupDisabled {
+    background:#000000 url(./images/shared/background.gif) repeat-x bottom left scroll;
+    border: 1px solid #868686;
+    /*border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;*/
+}
+
+.toolStripGroupTitle,
+.toolStripGroupTitleOver,
+.toolStripGroupTitleSelected,
+.toolStripGroupTitleSelectedDisabled,
+.toolStripGroupTitleSelectedOver,
+.toolStripGroupTitleDown,
+.toolStripGroupTitleSelectedDown,
+.toolStripGroupTitleDisabled {
+    background: #DDDDDD;
+    border: 0;
+    color: #333;
+    font-family:arial,tahoma, Arial, Verdana, Bitstream Vera Sans, sans-serif; 
+    font-size: 12px; 
+    font-weight: bold;
+    padding: 3px;
+}
+
+.iconButton,
+.iconButtonOver,
+.iconButtonFocused,
+.iconButtonFocusedOver,
+.iconButtonDown,
+.iconButtonFocusedDown,
+.iconButtonSelected,
+.iconButtonSelectedFocused,
+.iconButtonSelectedDown,
+.iconButtonSelectedFocusedDown,
+.iconButtonSelectedOver,
+.iconButtonSelectedFocusedOver,
+.iconButtonDisabled,
+.iconButtonSelectedDisabled {
+    background: transparent;
+    border: 1px solid transparent;
+    /*border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;*/
+    color: #000000;
+    font-family:arial,tahoma, Arial, Verdana, Bitstream Vera Sans, sans-serif; 
+    font-size: 12px;
+    padding: 4px;
+}
+
+.iconButtonOver,
+.iconButtonSelectedOver,
+.iconButtonFocusedOver,
+.iconButtonSelectedFocusedOver {
+    background: #D5D5D5;
+    background: -moz-linear-gradient(top, #cccccc 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top, #cccccc 0%,#ffffff 100%);
+    background: -o-linear-gradient(top, #cccccc 0%,#ffffff 100%);
+    background: -ms-linear-gradient(top, #cccccc 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#ffffff',GradientType=0 );
+    background: linear-gradient(to bottom, #cccccc, #ffffff);
+    border: 1px solid #868686;
+    color: #000000;
+}
+
+.iconButtonSelected,
+.iconButtonSelectedFocused,
+.iconButtonSelectedDown,
+.iconButtonSelectedFocusedDown,
+.iconButtonSelectedOver,
+.iconButtonSelectedFocusedOver {
+    background-color: pink;
+}
+
+.iconButtonDisabled {
+    color: #AAAAAA;
+}
+
+
+/*============================================================
+  Tools
+============================================================*/
+.resizeThumb {
+    background-color:#009999;
+}
+
+/*============================================================
+  TileGrid
+==============================================================*/
+
+.tileGrid {
+    border:1px solid #808080;
+}
+.tileValue,
+.tileValueDown,
+.tileValueSelected,
+.tileValueOver,
+.tileValueSelectedOver,
+.tileValueSelectedDown {
+    font-size: 8pt; 
+    text-overflow:ellipsis;   
+}
+
+.tileValueSelected {
+    color: black;
+}
+
+.tileValueSelectedOver {
+    color: black;
+}
+
+.simpleTile, 
+.simpleTileOver,
+.simpleTileSelected,
+.simpleTileSelectedOver {
+    padding:3px    
+}
+
+.simpleTile {
+    border:1px solid transparent;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;    
+    padding:3px;
+}
+.simpleTileOver {
+      padding:3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border:3px solid #165fa7;
+    opacity: 0.9;    
+}
+
+.simpleTileSelected {
+    border : 3px solid #ff7e14;
+    opacity: 0.9;
+      padding:3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.simpleTileSelectedOver {
+    border : 3px solid #ff7e14;
+      padding:3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;    
+}
+
+
+/*============================================================
+	15) Scrollbars
+============================================================*/
+.vScrollThumb {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #f5f5f5), color-stop(50%, #e9e8e8), color-stop(50%, #dad7d7), color-stop(82%, #cecaca), color-stop(100%, #c4c0c0));
+  background-image: -webkit-linear-gradient(left, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: -moz-linear-gradient(left, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: -o-linear-gradient(left, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: -ms-linear-gradient(left, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: linear-gradient(to right, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, startColorstr='#f5f5f5', endColorstr='#c4c0c0');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#f5f5f5', endColorstr='#c4c0c0')";
+  border: 1px solid #969696;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset -1px -1px 0 0 #dcdada, inset 0 1px 0 0 #ededed;
+  -webkit-box-shadow: inset -1px -1px 0 0 #dcdada, inset 0 1px 0 0 #ededed;
+  box-shadow: inset -1px -1px 0 0 #dcdada, inset 0 1px 0 0 #ededed;
+  margin-right: 1px;
+}
+
+.vScrollThumbOver {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #e3f4fc), color-stop(20%, #d5eefb), color-stop(50%, #d5eefb), color-stop(50%, #a7daf6), color-stop(80%, #a7daf6), color-stop(90%, #a4d5ef), color-stop(100%, #9ccae2));
+  background-image: -webkit-linear-gradient(left, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: -moz-linear-gradient(left, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: -o-linear-gradient(left, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: -ms-linear-gradient(left, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: linear-gradient(to right, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, startColorstr='#e3f4fc', endColorstr='#9ccae2');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#e3f4fc', endColorstr='#9ccae2')";
+  border: 1px solid #3c7daf;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset -1px -1px 0 0 #dcdee0, inset 1px 1px 0 0 white;
+  -webkit-box-shadow: inset -1px -1px 0 0 #dcdee0, inset 1px 1px 0 0 white;
+  box-shadow: inset -1px -1px 0 0 #dcdee0, inset 1px 1px 0 0 white;
+  margin-right: 1px;
+}
+
+.hScrollThumb {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5f5f5), color-stop(50%, #e9e8e8), color-stop(50%, #dad7d7), color-stop(82%, #cecaca), color-stop(100%, #c4c0c0));
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e9e8e8 50%, #dad7d7 50%, #cecaca 82%, #c4c0c0 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#f5f5f5', endColorstr='#c4c0c0');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#f5f5f5', endColorstr='#c4c0c0')";
+  border: 1px solid #969696;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 1px -1px 0 0 #dcdada, inset 0 1px 0 1px #ededed;
+  -webkit-box-shadow: inset 1px -1px 0 0 #dcdada, inset 0 1px 0 1px #ededed;
+  box-shadow: inset 1px -1px 0 0 #dcdada, inset 0 1px 0 1px #ededed;
+  margin-bottom: 1px;
+}
+
+.hScrollThumbOver {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3f4fc), color-stop(20%, #d5eefb), color-stop(50%, #d5eefb), color-stop(50%, #a7daf6), color-stop(80%, #a7daf6), color-stop(90%, #a4d5ef), color-stop(100%, #9ccae2));
+  background-image: -webkit-linear-gradient(top, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: -moz-linear-gradient(top, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: -o-linear-gradient(top, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: -ms-linear-gradient(top, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  background-image: linear-gradient(to bottom, #e3f4fc 0%, #d5eefb 20%, #d5eefb 50%, #a7daf6 50%, #a7daf6 80%, #a4d5ef 90%, #9ccae2 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#e3f4fc', endColorstr='#9ccae2');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#e3f4fc', endColorstr='#9ccae2')";
+  border: 1px solid #3c7daf;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 1px -1px 0 0 #dcdee0, inset -1px 1px 0 0 white;
+  -webkit-box-shadow: inset 1px -1px 0 0 #dcdee0, inset -1px 1px 0 0 white;
+  box-shadow: inset 1px -1px 0 0 #dcdee0, inset -1px 1px 0 0 white;
+  margin-bottom: 1px;
+}
+
+/*============================================================
+    Unused? Review & Remove
+============================================================*/
+.selectedText {
+    color:white; background-color:darkblue;
+}
+.disabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#CCCCCC;
+}
+.pageHeader {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:darkblue
+}
+.printPageHeader {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:darkblue
+}
+.printCell {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+
+/*IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+	Styles below this comment are not used by default in this skin
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*/
+
+
+
+/*============================================================
+    TabSet CSS tabs
+		tabSet.simpleTabBaseStyle
+============================================================*/
+/* styles for simple css-styled tabs*/
+/* left */
+.tabButtonLeft,
+.tabButtonLeftOver,
+.tabButtonLeftSelected,
+.tabButtonLeftSelectedOver,
+.tabButtonLeftDown,
+.tabButtonLeftSelectedDown,
+.tabButtonLeftSelectedDisabled,
+.tabButtonLeftDisabled {
+    padding: 2px;
+    border: 1px solid #C0C3C7;
+    background: #e7e7e7;
+    background-image: -moz-linear-gradient(top, #ffffff, #efefef);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    /*-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+    font-family:arial,tahoma,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+.tabButtonLeftOver,
+.tabButtonLeftSelected,
+.tabButtonLeftSelectedOver {
+    background: #ffffff;
+}
+
+.tabButtonLeftDown,
+.tabButtonLeftSelectedDown {
+    background: #ddd;
+}
+
+.tabButtonLeftSelectedDisabled,
+.tabButtonLeftDisabled {
+    background: #ddd;
+}
+
+/* right */                        
+.tabButtonRight,
+.tabButtonRightOver,
+.tabButtonRightSelected,
+.tabButtonRightSelectedOver,
+.tabButtonRightDown,
+.tabButtonRightSelectedDown,
+.tabButtonRightSelectedDisabled,
+.tabButtonRightDisabled {
+    padding: 2px;
+    border: 1px solid #C0C3C7;
+    background: #e7e7e7;
+    background-image: -moz-linear-gradient(top, #ffffff, #efefef);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    /*-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+    font-family:arial,tahoma,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+.tabButtonRightOver,
+.tabButtonRightSelected,
+.tabButtonRightSelectedOver {
+    background: #ffffff;
+}
+
+.tabButtonRightDown,
+.tabButtonRightSelectedDown {
+    background: #ddd;
+}
+
+.tabButtonRightSelectedDisabled,
+.tabButtonRightDisabled {
+    background: #ddd;
+}
+
+/* top */                        
+.tabButtonTop,
+.tabButtonTopOver,
+.tabButtonTopSelected,
+.tabButtonTopSelectedOver,
+.tabButtonTopDown,
+.tabButtonTopSelectedDown,
+.tabButtonTopSelectedDisabled,
+.tabButtonTopDisabled {
+    font-family:arial,tahoma,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+    padding: 2px;
+    border: 1px solid #aaaaaa;
+    border-bottom:none;
+    background: #e7e7e7;
+    /*color: #555555;*/
+    /*-moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;*/
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+.tabButtonTopSelected,
+.tabButtonTopSelectedOver,
+.tabButtonTopSelectedDown {
+    background: #ffffff;
+    /*color: #20419C;*/
+    border-top: 2px solid #4064C8;
+}
+
+.tabButtonTopSelectedDisabled,
+.tabButtonTopDisabled {
+    background: #ddd;
+}
+
+/* bottom */                        
+.tabButtonBottom,
+.tabButtonBottomOver,
+.tabButtonBottomSelected,
+.tabButtonBottomSelectedOver,
+.tabButtonBottomDown,
+.tabButtonBottomSelectedDown,
+.tabButtonBottomSelectedDisabled,
+.tabButtonBottomDisabled {
+    padding: 2px;
+    border: 1px solid #C0C3C7;
+    background: #e7e7e7;
+    background-image: -moz-linear-gradient(top, #ffffff, #efefef);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    /*-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+    font-family:arial,tahoma,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+.tabButtonBottomOver,
+.tabButtonBottomSelected,
+.tabButtonBottomSelectedOver {
+    background: #ffffff;
+}
+
+.tabButtonBottomDown,
+.tabButtonBottomSelectedDown {
+    background: #ddd;
+}
+
+.tabButtonBottomSelectedDisabled,
+.tabButtonBottomDisabled {
+    background: #ddd;
+}
+
+
+/*IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+	Styles below this comment are used by optional modules only
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*/
+
+
+
+/*============================================================
+	CubeGrid - Analytics Module only
+		cubeGrid.baseStyle - cubeCell
+		headerGrid.baseStyle - rowHeader
+		reportHeaderBar.button.baseStyle - rowHeader
+		reportHeaderBar.button.baseStyle - innerHeader/colHeader
+		reportHeaderBar.button.baseStyle - rowHeaderLabel
+		reportHeaderBar.button.baseStyle - colHeaderLabel
+============================================================*/
+.cubeGridBody {}
+.cubeCell {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:black; text-overflow:ellipsis;
+    background-color:#FFFFFF;
+    border-top:1px solid white; border-bottom:1px solid #828282; 
+    border-left:1px solid white; border-right:1px solid #828282;
+}
+.cubeCellDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:black; text-overflow:ellipsis;
+    background-color:#EEEEEE;
+    border-top:1px solid #EEEEEE; border-bottom:1px solid #828282; 
+    border-left:1px solid #EEEEEE; border-right:1px solid #828282;
+}
+.cubeCellDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#666666; text-overflow:ellipsis;
+    background-color:#FFFFFF; 
+    border-top:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF; 
+    border-left:1px solid #FFFFFF; border-right:1px solid #FFFFFF;
+}
+
+/* partial styles */ 
+.cubeCellOver {
+    background-color:#B8D1EE;
+    border-top:1px solid #B8D1EE; border-bottom:1px solid #828282; 
+}
+.cubeCellSelected {
+    background-color:#FFE781;
+    border-top:1px solid #FFE781; border-bottom:1px solid #828282; 
+    border-left:1px solid #FFE781; border-right:1px solid #828282;
+}
+.cubeCellSelectedOver {
+    background-color:#B8D1EE;
+    border-top:1px solid #B8D1EE; border-bottom:1px solid #828282; 
+    border-left:1px solid #B8D1EE; border-right:1px solid #828282;
+}
+
+/* row headers */
+.rowHeader {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#6682A0;
+    border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF;
+    border-right:1px solid #264260; border-bottom:1px solid #264260;
+    background-image:url("images/CubeGrid/rowHeader.gif");
+}
+.rowHeaderOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#6682A0;
+    border-left:1px solid #264260; border-top:1px solid #264260;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/rowHeaderOver.gif");
+}
+.rowHeaderDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#6682A0;
+    border-left:1px solid #264260; border-top:1px solid #264260;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/rowHeaderOver.gif");
+}
+.rowHeaderDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#808080;
+    background-color:#6682A0;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+.rowHeaderSelected,
+.rowHeaderSelectedDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#3E74B3;
+    border-left:1px solid #00008B; border-top:1px solid #00008B;
+    border-right:1px solid #F0F8FF; border-bottom:1px solid #F0F8FF;
+    background-image:url("images/CubeGrid/rowHeaderSelected.gif");
+    
+}
+.rowHeaderSelectedOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#3E74B3;
+    border-top:1px solid white; border-bottom:1px solid white; 
+    border-left:1px solid white; border-right:1px solid white;
+    background-image:url("images/CubeGrid/rowHeaderSelectedOver.gif");
+}						
+.rowHeaderSelectedDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#808080;
+    background-color:#3E74B3;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+
+/* row label */
+.rowHeaderLabel {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#204B7A;
+    border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF;
+    border-right:1px solid #000B3A; border-bottom:1px solid #000B3A;
+    background-image:url("images/CubeGrid/rowHeaderLabel.gif");
+}
+.rowHeaderLabelOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#204B7A;
+    border-left:1px solid #000B3A; border-top:1px solid #000B3A;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/rowHeaderLabel.gif");
+}
+.rowHeaderLabelDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#204B7A;
+    border-left:1px solid #000B3A; border-top:1px solid #000B3A;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/rowHeaderLabelDown.gif");
+}
+.rowHeaderLabelDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:#808080;
+    background-color:#7D7D7D;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+.rowHeaderLabelSelected,
+.rowHeaderLabelSelectedDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-left:1px solid black; border-top:1px solid black;
+    border-right:1px solid #555555; border-bottom:1px solid #555555;
+    background-image:url("images/CubeGrid/rowHeaderDown.gif");
+}
+.rowHeaderLabelSelectedOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-top:1px solid white; border-bottom:1px solid white; 
+    border-left:1px solid white; border-right:1px solid white;
+    background-image:url("images/CubeGrid/rowHeaderDown.gif");
+}						
+.rowHeaderLabelSelectedDisabled	{
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:#808080;
+    background-color:#7D7D7D;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+						
+/* column headers */
+.colHeader {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#6682A0;
+    border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF;
+    border-right:1px solid #264260; border-bottom:1px solid #264260;
+    background-image:url("images/CubeGrid/colHeader.gif");
+}
+.colHeaderOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#6682A0;
+    border-left:1px solid #264260; border-top:1px solid #264260;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/colHeaderOver.gif");
+}
+.colHeaderDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#6682A0;
+    border-left:1px solid #264260; border-top:1px solid #264260;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/colHeader.gif");
+}
+.colHeaderDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#808080;
+    background-color:#6682A0;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+.colHeaderSelected,
+.colHeaderSelectedDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-left:1px solid #00008B; border-top:1px solid #00008B;
+    border-right:1px solid #F0F8FF; border-bottom:1px solid #F0F8FF;
+    background-image:url("images/CubeGrid/colHeaderSelected.gif");
+}
+.colHeaderSelectedOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-top:1px solid white; border-bottom:1px solid white; 
+    border-left:1px solid white; border-right:1px solid white;
+    background-image:url("images/CubeGrid/colHeaderSelectedOver.gif");
+}						
+.colHeaderSelectedDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:#808080;
+    background-color:#3E74B3;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+
+/* column label */
+.colHeaderLabel {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#204B7A;
+    border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF;
+    border-right:1px solid #555555; border-bottom:1px solid #555555;
+    background-image:url("images/CubeGrid/colHeaderLabel.gif");
+}
+.colHeaderLabelOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#204B7A;
+    border-left:1px solid #000B3A; border-top:1px solid #000B3A;
+    border-right:1px solid #555555; border-bottom:1px solid #555555;
+    background-image:url("images/CubeGrid/colHeaderLabelDown.gif");
+}
+.colHeaderLabelDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#204B7A;
+    border-left:1px solid #000B3A; border-top:1px solid #000B3A;
+    border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;
+    background-image:url("images/CubeGrid/colHeaderLabelDown.gif");
+}
+.colHeaderLabelDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:#808080;
+    background-color:#7D7D7D;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+.colHeaderLabelSelected,
+.colHeaderLabelSelectedDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-left:1px solid black; border-top:1px solid black;
+    border-right:1px solid #555555; border-bottom:1px solid #555555;
+    background-image:url("images/CubeGrid/colHeaderLabelDown.gif");
+}
+.colHeaderLabelSelectedOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-top:1px solid white; border-bottom:1px solid white; 
+    border-right:1px solid #555555; border-bottom:1px solid #555555;
+    background-image:url("images/CubeGrid/colHeaderDown.gif");
+}						
+.colHeaderLabelSelectedDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:#808080;
+    background-color:#7D7D7D;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+
+/* inner header */
+.innerHeader {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:black;
+    background-color:#CCCCCC;
+    border-left:1px solid white; border-top:1px solid white;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+    background-image:url("images/CubeGrid/innerHeader.gif");
+}
+.innerHeaderOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:black;
+    background-color:#CCCCCC;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid white; border-bottom:1px solid white;
+    background-image:url("images/CubeGrid/innerHeader.gif");
+}
+.innerHeaderDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:black;
+    background-color:#CCCCCC;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid white; border-bottom:1px solid white;
+    background-image:url("images/CubeGrid/innerHeader.gif");
+}
+.innerHeaderDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#808080;
+    background-color:#CCCCCC;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+.innerHeaderSelected,
+.innerHeaderSelectedDown {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-left:1px solid #00008B; border-top:1px solid #00008B;
+    border-right:1px solid #F0F8FF; border-bottom:1px solid #F0F8FF;
+    background-image:url("images/CubeGrid/innerHeaderSelected.gif");
+}
+.innerHeaderSelectedOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; font-weight:bold; color:white;
+    background-color:#3E74B3;
+    border-top:1px solid white; border-bottom:1px solid white; 
+    border-left:1px solid white; border-right:1px solid white;
+    background-image:url("images/CubeGrid/innerHeaderSelectedOver.gif");
+}						
+.innerHeaderSelectedDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#808080;
+    background-color:#CCCCCC;
+    border-left:1px solid #808080; border-top:1px solid #808080;
+    border-right:1px solid #808080; border-bottom:1px solid #808080;
+}
+
+
+
+/*============================================================
+	BarChart
+	internal, charting/visualization module only
+		styleName - chart
+		barStyle - chartBar
+		others are currently fixed
+============================================================*/
+
+.chart { 
+    background-color:#CCCCCC;
+}
+.chartTitle {
+    color:black;
+    font-family:arial,tahoma, Tahoma,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align:center
+}
+.chartAxisTitle {
+    color:green;
+    font-family:arial,tahoma, Tahoma,sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+.chartValueTitle {
+    color:black;
+    font-family:arial,tahoma, Tahoma,sans-serif;
+    font-size: 12px;
+}
+.chartTotal {
+    color:black;
+    font-family:arial,tahoma,Bitstream Vera Sans, sans-serif; 
+    font-size: 12px;
+    background-color:linen;
+}
+.chartBody {
+    border-left:1px solid black;
+    border-top:1px dashed blue;
+    border-right:1px solid black;
+    background-color:#DDDDDD
+}   
+.chartBar1 {
+    background-color:red;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=1, startColorStr=#990000, endColorStr=#FF0000)";
+}
+.chartBar2 {
+    background-color:blue;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=1, startColorStr=#000099, endColorStr=#0000FF)";
+}
+.chartBar3 {
+    background-color:green;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=1, startColorStr=#009900, endColorStr=#00FF00)";
+}
+
+
+/*============================================================
+	Printing
+        printHeader - general print style for header elements including:
+        - ListGrid header cells
+        - SectionStack headers
+============================================================*/
+.printHeader {
+    font-family:arial,tahoma,Bitstream Vera Sans,Helvetica,Verdana,sans-serif; font-size: 12px;
+    border:1px solid black;
+    font-weight:bold;
+}
+
+/*============================================================
+	Calendar
+    
+============================================================*/
+.calendar,
+.calendarDisabled,
+.calendarDisabledDark,
+.calendarDisabledOver,
+.calendarDisabledOverDark,
+.calendarWorkday,
+.calendarWorkdayDisabled,
+.calendarDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#ffffff;
+}
+
+.calendarWorkdayDisabled,
+.calendarDark,
+.calendarDisabled,
+.calendarDisabledDark,
+.calendarDisabledOver,
+.calendarDisabledOverDark {
+    background-color:gainsboro;    
+}
+
+.calendarWorkday {
+    background-color:#f2f2f2; 
+}
+
+.calendarOver,
+.calendarOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#c0ffc0;
+}
+.calendarWorkdaySelected,
+.calendarCellSelected {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#CCCCCC; 
+}
+.labelColumn,
+.labelColumnDark,
+.labelColumnOver,
+.labelColumnOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:gainsboro;
+}
+
+.labelColumnOver,
+.labelColumnOverDark, 
+.calendarDisabledOver,
+.calendarDisabledOverDark {
+  background-color: #a4bbdb;
+}
+
+/* ----month---- */
+/* calMonthDayHeader and Body */
+
+.calMonthDayHeader,
+.calMonthDayHeaderDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color: gainsboro;
+}
+.calMonthDayHeaderOver,
+.calMonthDayHeaderOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color: #c0ffc0;
+}
+.calMonthDayHeaderDisabled,
+.calMonthDayHeaderDisabledOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#E6E6E6;
+}
+
+.calMonthDayBody,
+.calMonthDayBodyDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#ffffff;
+}
+.calMonthDayBodyOver,
+.calMonthDayBodyOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#c0ffc0;
+}
+.calMonthDayBodyDisabled,
+.calMonthDayBodyDisabledOver {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#E6E6E6;
+}
+/* calMonthOtherDayHeader and Body */
+
+.calMonthOtherDayHeader,
+.calMonthOtherDayHeaderDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:#444444;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color: #aaaaaa;
+}
+.calMonthOtherDayHeaderOver,
+.calMonthOtherDayHeaderOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:#444444;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color: #c0ffc0;
+}
+.calMonthOtherDayBody,
+.calMonthOtherDayBodyDark, 
+.calMonthOtherDayBodyDisabled, 
+.calMonthOtherDayBodyDisabledOver{
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#E6E6E6;
+}
+.calMonthOtherDayBodyOver,
+.calMonthOtherDayBodyOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:black;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color:#c0ffc0;
+}
+/* calMonthOtherDayBlank */
+
+.calMonthOtherDayBlank,
+.calMonthOtherDayBlankDark, 
+.calMonthOtherDayBlankOver,
+.calMonthOtherDayBlankOverDark {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    color:#444444;
+    border-bottom:1px solid #a0a0a0; border-right:1px solid #a0a0a0;
+    background-color: #E6E6E6;
+}
+
+/* calMonthEventLink */
+
+a.calMonthEventLink:link {color:blue; text-decoration:none}
+a.calMonthEventLink:visited {color:blue; text-decoration:none}
+a.calMonthEventLink:hover {color:blue; text-decoration:underline}
+a.calMonthEventLink:active {color:blue; text-decoration:none}
+
+/* ----event window---- */
+
+.eventWindow {
+    font-size: 9px;
+    background-color:#EBF4FF;
+    border: 1px solid #d0dff6;
+    padding: 0px;
+    margin: 0px;
+}
+
+.eventWindowHeader,
+.eventWindowGripper,
+.eventWindowLabel {
+    font-family:arial,tahoma,Arial,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 9px;
+    color:#4C4C4C;
+    background-color:#d0dff6;
+    margin: 0px;
+}
+
+.eventWindowBody {
+    font-family:arial,tahoma,Arial,Verdana,Bitstream Vera Sans,sans-serif; font-size: 9px;
+    color:black;
+    background-color:#EBF4FF;
+    padding: 3px;
+    
+}
+
+.eventWindowResizer{
+    border-top:1px solid white;
+    border-bottom: 1px solid white;
+}
+
+/* --- ZoneCanvas --- */
+
+.zoneCanvas {
+  background-color: rgba(150, 150, 150, 0.5);
+}
+
+.zoneCanvasHeader,
+.zoneCanvasGripper,
+.zoneCanvasLabel {
+  display: inline-block;
+  color: white;
+  background-color: grey;
+  left: 0;
+  bottom: 0;
+}
+
+/* --- IndicatorCanvas --- */
+
+.indicatorCanvas {
+  background-color: #AA0000;
+}
+
+.indicatorCanvasHeader,
+.indicatorCanvasGripper,
+.indicatorCanvasLabel {
+  display: inline-block;
+  color: white;
+  background-color: #AA0000;
+  font-family:arial,tahoma, Arial, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+/* make all grippers rounded */
+.eventWindowGripper,
+.indicatorCanvasGripper,
+.zoneCanvasGripper {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* show a border around floating labels */
+.eventWindowLabel,
+.zoneCanvasLabel,
+.indicatorCanvasLabel {
+  border: 1px solid black;
+}
+
+/*============================================================
+	PropertySheet
+	internal, used by Visual SmartClient tools
+        propertySheet.autoChildDefaults.cellStyle - propSheetValue
+        propertySheet.autoChildDefaults.titleStyle - propSheetTitle
+        propertySheet.TextItemDefaults.textBoxStyle - propSheetField
+        propertySheet.SelectItemDefaults.controlStyle - propSheetSelectControl
+        propertySheet.ColorItemDefaults.textBoxStyle - propSheetField
+        propertySheet.HeaderItemDefaults.textBoxStyle - propSheetHeading
+        propertySheet.SectionHeaderItemDefaults.cellStyle - propSheetSectionItemCell
+============================================================*/
+
+.propSheetValue,
+.propSheetValueFocused,
+.propSheetValueDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    border-bottom:1px solid #AAAAAA;
+    border-right:1px solid #AAAAAA;
+    padding:0px;
+    margin:0px;
+}
+.propSheetTitle,
+.propSheetTitleFocused,
+.propSheetTitleDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    border-bottom:1px solid #AAAAAA;
+    border-right:1px solid #AAAAAA;
+    background-color:#DDDDDD;
+    padding-left:4px;
+    padding-right:4px;
+}
+.propSheetTitleError,
+.propSheetValueError {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; 
+    font-size: 12px; color:#204268; 
+    background-color:#CFD9F2
+}
+.propSheetField,
+.propSheetFieldDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    background-color:#FFFFFF;
+    border:0px;
+    padding:0px;
+    padding-left:4px;
+    padding-right:4px;
+    margin-top:3px;
+}
+.propSheetHeading,
+.propSheetHeadingDisabled {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+    color:black;
+    background-color:#CCCCCC;
+    padding:4px;
+    border-bottom:1px solid #AAAAAA;
+}
+.propSheetSelectControl,
+.propSheetSelectControlFocused,
+.propSheetSelectControlDisabled {
+    padding-left:3px;
+    padding-right:3px;
+}
+
+.propSheetSectionItemCell,
+.propSheetSectionItemDisabled {
+}
+
+
+/* Styles for Finder cells */
+.finder,
+.finderSelected {
+    font-family:arial,tahoma,Verdana,Bitstream Vera Sans,sans-serif; 
+    font-size: 12px;
+    background-color:#F0F0F0;
+    border-bottom:1px solid white;
+}
+.finderSort,
+.finderSelectedSort {
+    font-family:arial,tahoma,Gadget, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; background-color:#DDDDDD;
+    border-bottom:1px solid white;
+}
+.finderDisabled {
+    font-family:arial,tahoma,Chicago, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#666666;
+    background-color:#FFFFFF;
+    border-bottom:1px solid #FFFFFF;
+}
+.finderSelectedText {
+    color:white; background-color:black; margin:5px;
+}
+
+	/* header buttons */
+.finderButton {
+    font-family:arial,tahoma,Gadget, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; background-color:#DDDDDD;
+    border-left:1px solid white; border-top:1px solid white;
+    border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;
+}
+.finderButtonDown,
+.finderButtonSelectedDown {
+    font-family:arial,tahoma,Gadget, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:white;
+    background-color:#999999;
+    border-left:1px solid #666666; border-top:1px solid #666666;
+    border-right:1px solid white; border-bottom:1px solid white;
+}
+.finderButtonSelectedDisabled,
+.finderButtonSelected {
+    font-family:arial,tahoma,Gadget, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; background-color:#999999;
+    border-left:1px solid #666666; border-top:1px solid #666666;
+    border-right:1px solid white; border-bottom:1px solid white;
+}
+.finderButtonDisabled {
+    font-family:arial,tahoma,Gadget, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#666666;
+    background-color:#999999;
+    border-left:1px solid #CCCCCC; border-top:1px solid #CCCCCC;	
+    border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;
+}
+
+
+
+/* Styles for Explorer cells */
+.explorer,
+.explorerOver,
+.explorerSelected,
+.explorerSelectedOver,
+.explorerDark,
+.explorerOverDark,
+.explorerSelectedOverDark,
+.explorerSelectedDark,
+.explorerDisabled {
+    font-family:arial,tahoma,MS Sans Serif, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+}
+.explorerSelectedText {
+    background-color:darkblue; color:white; margin:5px;
+}
+.explorerButtonOver,
+.explorerButtonSelected,
+.explorerButtonSelectedOver,
+.explorerButton {
+    font-family:arial,tahoma,MS Sans Serif, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    background-color:#CCCCCC;
+    border-left:2px solid white; border-top:2px solid white;
+    border-right:1px solid #999999; border-bottom:1px solid #999999;
+}
+.explorerButtonSelectedDown,
+.explorerButtonDown {
+    font-family:arial,tahoma,MS Sans Serif, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px;
+    background-color:#CCCCCC;  
+    border-left:2px solid #999999; border-top:2px solid #999999;
+    border-right:0px solid white; border-bottom:0px solid white;
+}
+.explorerButtonSelectedDisabled,
+.explorerButtonDisabled	{
+    font-family:arial,tahoma,MS Sans Serif, Verdana,Bitstream Vera Sans,sans-serif; font-size: 12px; color:#666666;
+    background-color:#CCCCCC; 
+    border-left:1px solid #CCCCCC; border-top:1px solid #CCCCCC;	
+    border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;
+}
+
+
+/********************************************************************************************************/
+.mainMenu {
+    border: 1px solid #dddddd;
+    /*-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,0.4), rgba(50,50,50,0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.4)), to(rgba(50,50,50,0.1)));
+}
+
+.mainMenuButton,
+.mainMenuButtonOver,
+.mainMenuButtonDown {
+    font-family:arial,tahoma,Verdana,sans-serif;
+    font-size: 12px;
+    padding:5px;
+    color: #ffffff;
+}
+
+.mainMenuButtonOver {
+    background-color: #255999;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.1, #255999), color-stop(0.55, #336aa1), color-stop(0.77, #3b7db3));
+    background-image: -moz-linear-gradient(center bottom, #255999 10%, #336aa1 55%, #3b7db3 77%);    
+}
+.mainMenuButtonDown {
+    background-color: #255999;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.1, #255999), color-stop(0.55, #336aa1), color-stop(0.77, #3b7db3));
+    background-image: -moz-linear-gradient(center bottom, #255999 10%, #336aa1 55%, #3b7db3 77%);    
+}
+

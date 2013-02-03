@@ -1,0 +1,44 @@
+<DataSource		ID="pm_vlans"	
+				serverType="sql"	
+				requiresAuthentication="true"
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="ID"				type="sequence"	primaryKey="true"/>
+        <field name="OBJECT_ID"			type="integer" 	required="true"/>
+        <field name="VLAN"				type="integer"	required="true"/>
+        <field name="NAME" 				type="text" 	length="100"/>
+        <field name="NET" 				type="text" 	length="100"/>
+        <field name="VOICE"				type="boolean"	required="true"/>
+        <field name="DESCR" 			type="text" 	length="1000"/>
+        <field name="CLIENTS_QTY"		type="integer"	customSelectExpression="PM_COUNT_VLAN_CLIENTS(PM_VLANS.OBJECT_ID,PM_VLANS.VLAN)"/>
+        <field name="LAST_DETECT"		type="datetime" />
+        <field name="OBJECT"			type="text"		customSelectExpression="(select o.name from objects o where o.id=pm_vlans.object_id)" customSQL="true"/>
+        <field name="HOSTS_QTY"			type="integer"	customSelectExpression="PM_COUNT_VLAN_HOSTS(PM_VLANS.OBJECT_ID,PM_VLANS.VLAN)" customSQL="true"/>
+    </fields>
+    
+	<script>
+	    if (DataSource.isModificationOperation(dsRequest.getOperationType())) {
+	    	def rows;
+	    	if (values.OBJECT_ID != null)
+	    		rows = query(sqlConnection, "select object_access(id) as access from objects where id = ?", values.OBJECT_ID);
+	    	else
+	    		rows = query(sqlConnection, "select object_access(object_id) as access from pm_vlans where id = ?", values.ID);
+			if (rows.size()==0) throw new ExNoDataFound();
+			if (!"FULL".equals(rows[0].ACCESS)) throw new ExAccessDenied();								
+		}
+		return dsRequest.execute()
+	</script>   
+	
+	<operationBindings>
+	    <operationBinding operationType="fetch">  
+			<whereClause>$defaultWhereClause and object_access(object_id) is not null</whereClause>	     
+        </operationBinding>	  
+	    
+	    <operationBinding operationType="fetch" operationId="IPAM" customFields="OBJECT,HOSTS_QTY">  
+	        <tableClause>$defaultTableClause join objects on objects.id = pm_vlans.object_id</tableClause>
+			<whereClause>$defaultWhereClause and objects.map_id = $advancedCriteria.MAP_ID</whereClause>	     
+        </operationBinding>	  
+	</operationBindings>    
+    
+</DataSource>

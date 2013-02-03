@@ -1,0 +1,25 @@
+<DataSource		ID="user_variables"	
+				serverType="sql"
+				requiresAuthentication="true"	
+				criteriaPolicy="DROPONCHANGE">
+    
+    <fields>
+        <field name="USER_ID"			type="integer"	/>
+        <field name="NAME"				type="text"		/>
+        <field name="VAL"				type="text"		/>
+    </fields>
+    
+    <operationBindings>	    
+	    <operationBinding operationType="add">  
+        	 <customSQL>
+        	    DO $$ BEGIN PERFORM USER_VAR_SET($values.NAME, $values.VAL); END $$ --   
+        	 </customSQL>  
+        </operationBinding>
+        <operationBinding operationType="fetch">
+        	 <customSQL>
+        	    SELECT USER_VAR_GET($advancedCriteria.NAME) AS VAL
+        	 </customSQL>  
+        </operationBinding>
+	</operationBindings>
+    
+</DataSource>

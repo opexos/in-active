@@ -1,0 +1,14 @@
+<DataSource		ID="user_roles"	
+				serverType="sql"	
+				requiresAuthentication="true"	
+				requiresRole="admin"			
+				criteriaPolicy="DROPONCHANGE">
+				    
+    <fields>
+        <field name="USER_ID" 		type="integer"	primaryKey="true"	required="true"		foreignKey="users.ID"/>
+        <field name="USER_NAME" 	includeFrom="users.NAME"/>
+        <field name="ROLE_ID" 		type="integer"	primaryKey="true"	required="true"		foreignKey="roles.ID" />
+        <field name="ROLE_NAME" 	includeFrom="roles.NAME"/>
+    </fields>
+    
+</DataSource>
