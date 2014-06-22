@@ -1,0 +1,37 @@
+CREATE PROCEDURE user_update(IN P_ID INT,
+                             IN P_NAME D_VC,
+                             IN P_LOGIN D_VC,
+                             IN P_PWD D_VC,
+                             IN P_COMMENT D_VC_LONG,
+                             IN P_ADMIN BOOLEAN,
+                             IN P_LOCKED BOOLEAN) 
+MODIFIES SQL DATA 
+BEGIN ATOMIC 
+
+DELETE FROM USER_ROLES WHERE LOGIN = (SELECT LOGIN FROM USERS WHERE ID = P_ID);
+
+UPDATE USERS
+SET NAME = P_NAME,
+    LOGIN = P_LOGIN,
+    PWD = P_PWD,
+    COMMENT = P_COMMENT,
+    LOCKED = P_LOCKED
+WHERE ID = P_ID;
+
+IF DIAGNOSTICS(ROW_COUNT) = 0 THEN
+  SIGNAL SQLSTATE '01000' SET MESSAGE_TEXT = 'NO_DATA_FOUND';
+END IF;
+
+INSERT INTO USER_ROLES(LOGIN, ROLE) 
+VALUES(P_LOGIN, CASEWHEN(P_ADMIN,'admin','user'));
+
+END
+
+
+
+DROP PROCEDURE USER_UPDATE
+
+
+
+
+
