@@ -126,16 +126,6 @@ public class G {
 			put(SCRIPT_FOR_PORT, S.scriptForPort());
 		}
 	};
-	/*public static final LinkedHashMap<String, String> SCRIPT_TYPES = new LinkedHashMap<String, String>() {
-		{
-			put(ScriptType.DOWNLOAD_CONFIGURATION.toString(), S.downloadDeviceConfig());
-			put(ScriptType.CONSOLE_AUTH.toString(), S.consoleAuth());
-			put(ScriptType.DEVICE_MANAGE.toString(), S.deviceManage());
-			put(ScriptType.GET_ARP.toString(), S.getArpTable());
-			put(ScriptType.COMMON.toString(), S.common());
-			put(ScriptType.PORT_INFO.toString(), S.getPortInfo());
-		}
-	};*/
 	public static final LinkedHashMap<String, String> OBJECT_TYPES = new LinkedHashMap<String, String>() {
 		{
 			put(ObjectType.CONFIG_CONTROL.toString(), S.configurationControl());
@@ -246,18 +236,6 @@ public class G {
 	public static native String calcMD5(String data) /*-{
 		return $wnd.calcMD5(data);
 	}-*/;
-
-	// public static native void showLineNums(Element el, String name) /*-{
-	// $wnd.showLineNums(el, name);
-	// }-*/;
-
-	// public static native void setMonospace(Element el, String name) /*-{
-	// $wnd.setMonospace(el, name);
-	// }-*/;
-
-	// public static native void placeCaretAtEnd(Element el) /*-{
-	// $wnd.placeCaretAtEnd(el);
-	// }-*/;
 
 	public static String getList(Record[] records, String attributeName, String delimeter) {
 		String result = "";
@@ -630,8 +608,6 @@ public class G {
 		final FileItem fi = new FileItem("FILE");
 		fi.setShowTitle(false);
 		fi.setMultiple(false);
-		// fi.setRequired(true);
-		// fi.setValidators(new FileItemValidator(FileType.Excel));
 		form.setFields(fi);
 		form.editNewRecord();
 		// passing values
@@ -658,8 +634,6 @@ public class G {
 			@Override
 			public void onClick() {
 				// it is impossible for the form to be redrawn, because file data is lost
-				// if (!form.validate())
-				// return;
 				if (fi.getValue() == null) {
 					G.dialogWarning(G.S.specifyFile());
 					return;
@@ -703,13 +677,6 @@ public class G {
 										setFields(fields);
 									}
 
-									/*@Override
-									protected String getCellCSSText(ListGridRecord record, int rowNum, int colNum) {
-										// color red errors
-										if (getFieldName(colNum).equals("RESULT") && record.getAttributeAsBoolean("ERROR"))
-											return Const.CSS_RED_TEXT;
-										return super.getCellCSSText(record, rowNum, colNum);
-									}*/
 								};
 								RecordList records = new RecordList(resp.getDataAsObject());
 								for (int i = 0; i < records.getLength(); i++) {
@@ -837,13 +804,6 @@ public class G {
 				new ConsoleRealTime2(title, idType, id).show();
 			}
 		});
-		/*G.waitDialogShow();
-		ServerCall.startConsole(id, idType, new MapCallback() {
-			public void execute(Map map) {
-				G.waitDialogHide();
-				new ConsoleRealTime(map.get("TITLE").toString(), map.get("ID").toString()).show();
-			}
-		});*/
 	}
 
 	public static boolean isEqual(Record a, Record b, String... compareAttributes) {
@@ -864,19 +824,6 @@ public class G {
 		} else
 			return false;
 	}
-
-	/*public static void setValues(DynamicForm form, Map values) {
-		if (values != null) {
-			// передаем только значения, для которых есть соответствующий элемент на форме
-			Iterator<String> it = values.keySet().iterator();
-			while (it.hasNext()) {
-				String key = it.next();
-				if (form.getField(key) == null)
-					it.remove();
-			}
-			form.setValues(values);
-		}
-	}*/
 
 	public static void inputVariables(RecordList list, Map<String, String> defaultValues, final MapCallback callback) {
 		int len = list.getLength();
