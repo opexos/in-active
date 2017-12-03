@@ -79,14 +79,6 @@ public class ScriptResultViewer extends Window {
 		}
 		resizeTo(G.availWidth(winWidth), G.availHeight(winHeight));
 
-		// minSize(300, 300);
-		/*addResizedHandler(new ResizedHandler() {
-			public void onResized(ResizedEvent event) {
-				Cookies.setCookie("ScriptResultViewerWidth", getWidthAsString());
-				Cookies.setCookie("ScriptResultViewerHeight", getHeightAsString());
-			}
-		});*/
-
 		m_resPane = new HTMLPane("<pre>" + (res.toString().trim().isEmpty() ? G.S.noScriptResult() : res.toString()) + "</pre>");
 		m_logPane = new HTMLPane("<pre>" + (GS.isEmpty(result.log) ? G.S.noScriptLog() : StringUtil.asHTML(result.log)) + "</pre>");
 		m_conPane = new HTMLPane("<pre>" + (GS.isEmpty(result.console) ? G.S.scriptDoesntUseConsole() : StringUtil.asHTML(result.console)) + "</pre>");

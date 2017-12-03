@@ -118,6 +118,14 @@ public class ScriptExec {
 					public void execute(Map map) {
 						m_params.put(what, map); // запоминаем параметры
 						G.waitDialogShow();
+						// we create a copy, because we do not want to modify the saved parameters
+						if (map != null)
+							map = new HashMap(map);
+						else
+							map = new HashMap();
+						// adding the passed parameters
+						if (inParams != null)
+							map.putAll(inParams);
 						executeScript(what, devices, map, 0, objectType);
 					}
 				});

@@ -34,19 +34,6 @@ public class ServerCall {
 	}
 
 
-	/*
-	public static void downloadConfig(String script, String host, String connectionType, int port, String login, String pwd, String enable_pwd,
-			final DownloadConfigCallback callback) {
-		DMI.call("app", "DMI", "downloadConfig", new RPCCallback() {
-			public void execute(RPCResponse response, Object rawData, RPCRequest request) {
-				Map m = response.getDataAsMap();
-				callback.execute((Boolean) m.get("OK"), (String) m.get("CONSOLE"), (String) m.get("LOG"), (String) m.get("CONFIG"));
-			}
-		}, new Object[] { script, host, connectionType, port, login, pwd, enable_pwd });
-	}
-	*/
-
-
 	public static void executeScript(String script, int deviceId, Map params, final ExecuteScriptCallback callback) {
 		DMI.call("app", "DMI", "executeScript", new RPCCallback() {
 			public void execute(RPCResponse response, Object rawData, RPCRequest request) {

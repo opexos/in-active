@@ -183,17 +183,12 @@ public class Start implements EntryPoint {
 			}
 		});
 
-		// tabs
-		// FileLoader.cacheImg(skinImgDir, baseImageURL);
 		G.TABSET = new TabSet() {
 			{
 				setHeight100();
 				setCanFocus(false);
 				setCanCloseTabs(true);
 				setShowTabPicker(false);
-				// setShowTabScroller(false);
-				// setUseSimpleTabs(true);
-				// setCloseTabIconSize(10);
 				setDestroyPanes(true);
 				setVisible(false); // Изначально делаем невидимой
 				addCloseClickHandler(new CloseClickHandler() {
