@@ -20,8 +20,6 @@ public class AllArchiveClients extends AppTab {
 	private Record m_objectInfo;
 	private ListGrid m_grid;
 
-	// private FilterBuilder m_filter;
-
 	public AllArchiveClients(Record objectInfo) {
 		super();
 		m_objectInfo = objectInfo;
@@ -29,9 +27,6 @@ public class AllArchiveClients extends AppTab {
 	}
 
 	protected Canvas getContent() {
-
-		// m_filter = new FilterBuilder();
-		// m_filter.setDataSource(DS.PM_PORT_CLIENTS);
 
 		m_grid = new ListGrid(DS.PM_CLIENTS_ARC, true, false, false, false, true, true) {
 			@Override
@@ -59,8 +54,6 @@ public class AllArchiveClients extends AppTab {
 		};
 		m_grid.setHeaderSpans(
 				new HeaderSpan(G.S.device(), new String[] { "DEV_HOST", "DEV_NAME", "DEV_LOCATION", "DEV_COMMENT" })// ,
-				// new HeaderSpan(G.S.clients(), new String[] { "PORT", "TRUNK", "TELCO", "PATCH", "LOCATION," "COMMENT", "IP", "MAC", "VLAN", "VOICE",
-				// "NETWORK_NAME" })
 				);
 		m_grid.addButton(img24("save_list"), G.S.saveList(), new ClickHandler() {
 			public void onClick(ClickEvent event) {
@@ -71,41 +64,7 @@ public class AllArchiveClients extends AppTab {
 		m_grid.addCriteria("OBJECT_ID", OperatorId.EQUALS, m_objectInfo.getAttribute("ID"));
 		m_grid.setAutoFetchData(true);
 
-		// DynamicForm form = new DynamicForm();
-		// form.setTitleOrientation(TitleOrientation.TOP);
-		//
-		// IButton clearButton = new IButton(G.S.clearFilter(), new ClickHandler() {
-		// public void onClick(ClickEvent event) {
-		// m_filter.clearCriteria();
-		// applyFilter();
-		// }
-		// });
-		// clearButton.setWidth(150);
-		// IButton filterButton = new IButton(G.S.applyFilter(), new ClickHandler() {
-		// public void onClick(ClickEvent event) {
-		// applyFilter();
-		// }
-		// });
-		// filterButton.setWidth(150);
-		// HLayout hl = new HLayout(Const.DEFAULT_PADDING);
-		// hl.setAutoHeight();
-		// hl.setMembers(filterButton, clearButton);
-
-		// VLayout layout = new VLayout(Const.DEFAULT_PADDING);
-		// layout.addMember(m_filter);
-		// layout.addMember(form);
-		// layout.addMember(hl);
-		// layout.addMember(m_grid);
-
-		// applyFilter();
-		// return layout;
 		return m_grid;
 	}
-
-	// private void applyFilter() {
-	// AdvancedCriteria criteria = m_filter.getCriteria();
-	// criteria.addCriteria("OBJECT_ID", OperatorId.EQUALS, m_objectInfo.getAttribute("ID"));
-	// m_grid.filterData(criteria);
-	// }
 
 }

@@ -234,11 +234,6 @@ public class ConfigurationControl extends AppTab {
 				m_grid.exportToExcel("devices.xls");
 			}
 		});
-		// m_grid.addButton(Icons24.LOAD_LIST, G.S.loadDeviceList(), new ClickHandler() {
-		// public void onClick(ClickEvent event) {
-		// loadDevicesFromFile();
-		// }
-		// });
 		m_grid.addRecordsCount();
 		m_grid.setFieldNameForDeleteQuestion("HOST");
 		m_grid.addCriteria("OBJECT_ID", OperatorId.EQUALS, m_objectInfo.getAttributeAsInt("ID"));
@@ -661,24 +656,5 @@ public class ConfigurationControl extends AppTab {
 		});
 	}
 
-	// private void loadDevicesFromFile() {
-	// G.uploadData(G.S.loadDeviceList(), DS.OP_UPLOAD_CC_DEVICES, new Runnable() {
-	// public void run() {
-	// m_grid.invalidateCache();
-	// }
-	// }, new Object[] { "OBJECT_ID", m_objectInfo.getAttribute("ID") }, new Object[] {
-	// "HOST", G.S.host(), 80,
-	// "NAME", G.S.name(), 80,
-	// "DEVICE_TYPE_NAME", G.S.deviceType(), 80,
-	// "CONNECT_TYPE", G.S.connectionType(), 80,
-	// "LOGIN", G.S.login(), 60,
-	// "PWD", G.S.password(), 60,
-	// "ENABLE_PWD", G.S.enablePassword(), 60,
-	// "GET_CONFIG_INTERVAL", G.S.interval(), 70,
-	// "STORE_CONFIG_DAYS", G.S.days(), 70,
-	// "COMMENT", G.S.comment(), 80,
-	// "LOCATION", G.S.location(), 80
-	// });
-	// }
 
 }
