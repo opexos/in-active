@@ -31,11 +31,7 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_assembly.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_compression.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_contentexport.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_core_rpc.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/smartgwtee-3.1p/doc/server/javadoc/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_core_rpc.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_hibernate.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_jpa.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_js_parser.jar"/>
@@ -52,11 +48,7 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jtidy-r938.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/mail.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/messaging.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/smartgwtee.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/smartgwtee-6.0p/doc/server/javadoc/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/smartgwtee.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/xml-apis-ext.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/icu4j-50_1.jar"/>
@@ -66,24 +58,10 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/isomorphic_autotest.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/velocity-1.7.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/dnsjava-2.1.5.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/ganymed-ssh2-261.jar" sourcepath="C:/EclipseWorkspace/ganymed-ssh2/ganymed-ssh2-261-sources.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/EclipseWorkspace/ganymed-ssh2/ganymed-ssh2-261-javadoc.jar!/"/>
-			<attribute name="source_encoding" value="UTF-8"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/smartgwt.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/smartgwtee-5.0p/doc/javadoc/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/ganymed-ssh2-261.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/smartgwt.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/operadriver-1.5.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/jtcl-2.8.0.jar" sourcepath="C:/EclipseWorkspace/jtcl-2.8.0/src/main/java">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/EclipseWorkspace/jtcl-2.8.0/doc/apidocs/"/>
-			<attribute name="source_encoding" value="UTF-8"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jtcl-2.8.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-exec-1.3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-fileupload-1.3.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-net-3.3.jar"/>
@@ -130,12 +108,7 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-3.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jetty-repacked-5.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/selenium-server-2.53.0.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/snmp4j-2.5.3.jar" sourcepath="C:/EclipseWorkspace/snmp4j-2.5.3/src/main/java">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/EclipseWorkspace/snmp4j-2.5.3/dist/snmp4j-2.5.3-javadoc.jar!/"/>
-			<attribute name="source_encoding" value="UTF-8"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/snmp4j-2.5.3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/postgresql-9.4.1212.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/hsqldb.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
@@ -145,16 +118,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-user.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-servlet.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/validation-api-1.0.0.GA.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-api-checker.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-codeserver.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-dev.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-elemental.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/gwt-servlet-deps.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/requestfactory-apt.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/requestfactory-client.jar"/>
-	<classpathentry kind="lib" path="/Users/opex/Projects/old/EclipseWorkspace/gwt-2.8.2/requestfactory-server.jar"/>
+	<classpathentry kind="lib" path="../gwt-2.8.2/gwt-dev.jar"/>
+	<classpathentry kind="lib" path="../gwt-2.8.2/gwt-user.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
