@@ -36,7 +36,7 @@
 
   <target name="gwtc" depends="javac" description="GWT compile to JavaScript (production mode)">
   	<delete dir="war/app" includeemptydirs="yes"/>
-    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="1024m">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="2048m">
       <classpath>
         <pathelement location="src"/>
         <path refid="project.class.path"/>
